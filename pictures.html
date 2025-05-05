@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures of Mandy - Birthday Surprise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .gallery-item {
+            background: white;
+            border: 4px solid var(--primary-pink);
+            padding: 10px;
+            box-shadow: 8px 8px 0 var(--primary-pink);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid var(--primary-pink);
+        }
+
+        .gallery-item video {
+            background: #000;
+        }
+        
+        .media-caption {
+            font-size: 0.7em;
+            color: var(--dark-pink);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .media-type {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.6em;
+            border: 2px solid var(--dark-pink);
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+        
+        .back-button:hover {
+            color: var(--dark-pink);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-pink);
+            margin: 30px 0 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="pixel-text">Pictures of Mandy</h1>
+            <div class="pixel-heart">📸</div>
+        </header>
+        
+        <a href="main.html" class="back-button">← Back to Home</a>
+        
+        <main>
+            <h2 class="section-title">Photos</h2>
+            <div class="gallery">
+                <!-- Example photos - replace these with actual photos -->
+                <div class="gallery-item">
+                    <span class="media-type">Photo</span>
+                    <img src="https://placehold.co/400x300/ff69b4/ffffff?text=Mandy+1" alt="Mandy's Photo 1">
+                    <div class="media-caption">Our first date ❤️</div>
+                </div>
+                <div class="gallery-item">
+                    <span class="media-type">Photo</span>
+                    <img src="https://placehold.co/400x300/ff69b4/ffffff?text=Mandy+2" alt="Mandy's Photo 2">
+                    <div class="media-caption">Beach day! 🌊</div>
+                </div>
+                <div class="gallery-item">
+                    <span class="media-type">Photo</span>
+                    <img src="https://placehold.co/400x300/ff69b4/ffffff?text=Mandy+3" alt="Mandy's Photo 3">
+                    <div class="media-caption">Dinner date 🍝</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Videos</h2>
+            <div class="gallery">
+                <!-- Example videos - replace these with actual videos -->
+                <div class="gallery-item">
+                    <span class="media-type">Video</span>
+                    <video controls>
+                        <source src="https://example.com/video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="media-caption">Our first dance 💃</div>
+                </div>
+                <div class="gallery-item">
+                    <span class="media-type">Video</span>
+                    <video controls>
+                        <source src="https://example.com/video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="media-caption">Birthday surprise! 🎉</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with love by Brandon</p>
+        </footer>
+    </div>
+</body>
+</html> 
