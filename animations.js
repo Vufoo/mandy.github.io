@@ -3,15 +3,25 @@ function createFallingElement(type) {
     const element = document.createElement('div');
     element.className = `falling-element ${type}`;
     element.style.left = Math.random() * 100 + 'vw';
-    element.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    // Randomize size
+    const scale = Math.random() * 0.5 + 0.75;
+    element.style.fontSize = (2 * scale) + 'em';
+    // Randomize animation duration
+    element.style.animationDuration = (Math.random() * 2 + 2) + 's';
     element.style.opacity = Math.random() * 0.5 + 0.5;
+    // Randomize initial rotation
+    const rot = Math.floor(Math.random() * 360);
+    element.style.transform = `rotate(${rot}deg)`;
     
     if (type === 'bunny') {
         element.innerHTML = '🐰';
     } else if (type === 'boba') {
         element.innerHTML = '🧋';
-    } else if (type === 'yarn')
+    } else if (type === 'yarn') {
         element.innerHTML = '🧶';
+    } else if (type === 'balloon') {
+        element.innerHTML = '🎈';
+    }
     
     document.body.appendChild(element);
     
@@ -56,9 +66,9 @@ function createMagnus() {
     let velocity = { x: 0, y: 0 };
     let mousePosition = { x: 0, y: 0 };
     let direction = 1;
-    const maxSpeed = 3;
-    const acceleration = 0.1;
-    const deceleration = 0.05;
+    const maxSpeed = 7;
+    const acceleration = 10;
+    const deceleration = 0.01;
     let isMoving = true;
     let lastMouseMove = Date.now();
     let isFollowing = true;
@@ -150,24 +160,20 @@ function createMagnus() {
     moveMagnus();
 }
 
-// Start animations when page loads
 window.addEventListener('load', () => {
     // Create Magnus
     createMagnus();
 
     // Only create falling elements on the main page
     if (window.location.pathname.endsWith('main.html')) {
-        // Create falling elements more frequently
+        // Create falling elements more frequently and in bursts
         setInterval(() => {
-            const rand = Math.random();
-            if (rand < 1/3) {
-                createFallingElement('bunny');
-            } else if (rand < 2/3) {
-                createFallingElement('boba');
-            } else {
-                createFallingElement('yarn');
+            const count = Math.floor(Math.random() * 3) + 2; // 2-4 elements per burst
+            for (let i = 0; i < count; i++) {
+                const types = ['bunny', 'boba', 'yarn', 'balloon'];
+                const type = types[Math.floor(Math.random() * types.length)];
+                createFallingElement(type);
             }
-        }, 400);
+        }, 500);
     }
 });
-
