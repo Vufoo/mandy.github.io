@@ -66,8 +66,8 @@ function createMagnus() {
     let velocity = { x: 0, y: 0 };
     let mousePosition = { x: 0, y: 0 };
     let direction = 1;
-    const maxSpeed = 7;
-    const acceleration = 10;
+    const maxSpeed = 3;
+    const acceleration = 4;
     const deceleration = 0.01;
     let isMoving = true;
     let lastMouseMove = Date.now();

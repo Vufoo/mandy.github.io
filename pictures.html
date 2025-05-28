@@ -9,7 +9,7 @@
     <style>
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px 0;
         }
@@ -32,7 +32,7 @@
             width: 100%;
             height: auto;
             display: block;
-            border: 2px solid var(--primary-pink);
+            border-radius: 8px;
         }
 
         .gallery-item video {
@@ -40,7 +40,7 @@
         }
         
         .media-caption {
-            font-size: 0.7em;
+            font-size: 0.8em;
             color: var(--dark-pink);
             margin-top: 10px;
             text-align: center;
@@ -49,12 +49,16 @@
         .media-type {
             position: absolute;
             top: 10px;
-            right: 10px;
+            left: 10px;
             background: var(--primary-pink);
             color: white;
             padding: 5px 10px;
-            font-size: 0.6em;
+            font-size: 0.8em;
             border: 2px solid var(--dark-pink);
+            border-radius: 6px;
+            font-family: inherit;
+            z-index: 2;
+            box-shadow: 2px 2px 0 var(--secondary-pink);
         }
         
         .back-button {
@@ -80,7 +84,7 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="pixel-text">Pics and Vids of Mandy</h1>
+            <h1 class="pixel-text">Pictures of Mandy</h1>
             <div class="pixel-heart">📸</div>
         </header>
         
@@ -89,42 +93,335 @@
         <main>
             <h2 class="section-title">Photos</h2>
             <div class="gallery">
-                <!-- Example photos - replace these with actual photos -->
-                <div class="gallery-item">
-                    <span class="media-type">02:14:23</span>
-                    <img src="images/" alt="Mandy's Photo 1">
-                    <div class="media-caption"></div>
-                </div>
-                <div class="gallery-item">
-                    <span class="media-type">Photo</span>
-                    <img src="images/photo2.jpg" alt="Mandy's Photo 2">
-                    <div class="media-caption">Beach day! 🌊</div>
-                </div>
-                <div class="gallery-item">
-                    <span class="media-type">Photo</span>
-                    <img src="images/photo3.jpg" alt="Mandy's Photo 3">
-                    <div class="media-caption">Dinner date 🍝</div>
-                </div>
-            </div>
 
-            <h2 class="section-title">Videos</h2>
-            <div class="gallery">
-                <!-- Example videos - replace these with actual videos -->
+                <!-- 2023 -->
                 <div class="gallery-item">
-                    <span class="media-type">Rock Climbing 09/06/24</span>
-                    <video controls>
-                        <source src="videos/09:06:24_rock_climbing.mp4" type="video/mp4">
-                    </video>
-                    <div class="media-caption">Mandy's first time sending it on the V4 wall!</div>
+                    <span class="media-type">03/29/23</span>
+                    <img src="mandy/2023/2023:03:29_penguin.jpeg" alt="penguin" />
+                    <div class="media-caption">Mandy with all her penguins 🐧. This is a little after we started dating.</div>
                 </div>
+
                 <div class="gallery-item">
-                    <span class="media-type">Video</span>
-                    <video controls>
-                        <source src="videos/video2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="media-caption">Birthday surprise! 🎉</div>
+                    <span class="media-type">04/09/23</span>
+                    <img src="mandy/2023/2023:04:09_post_throwup.jpeg" alt="post throwup" />
+                    <div class="media-caption">Post throwing up at Brandon's place after drinking 🤢.</div>
                 </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">04/15/23</span>
+                    <img src="mandy/2023/2023:04:15_beautiful.jpg" alt="beautiful" />
+                    <div class="media-caption">Beautiful Mandy ✨. This is her contact pic!</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">04/21/23</span>
+                    <img src="mandy/2023/2023:04:21_hotpot_date.JPG" alt="hotpot date" />
+                    <div class="media-caption">Hotpot 1st month anniversary date was so expensive. I think over like $250 lol.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">05/18/23</span>
+                    <img src="mandy/2023/2023:05:18_croissant.jpeg" alt="croissant" />
+                    <div class="media-caption">She likes croissants 🥐. This was at Paris Baguette near ACC.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">05/25/23</span>
+                    <img src="mandy/2023/2023:05:25_roadtrip.jpg" alt="roadtrip" />
+                    <div class="media-caption">Mandy on her roadtrip with friends and Emily 🚗. Emily took this pic. </div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">06/08/23</span>
+                    <img src="mandy/2023/2023:06:08_smolder.jpg" alt="smolder" />
+                    <div class="media-caption">Roblox smolder. Makes me giggle.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">07/09/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:07:09_vietnam_mandy.mov" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy in Vietnam on a Grab motorbike lmao.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">08/19/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:08:19_mandy_bday.MOV" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy's 20th birthday celebratio with the fam!</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">08/26/23</span>
+                    <img src="mandy/2023/2023:08:26_20bday_dinner.jpeg" alt="20bday dinner" />
+                    <div class="media-caption">20th Birthday dinner at Uchiko 🎂</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/06/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:09:06_mandy_coding.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy coding python for the first time so proud ;0. She needed help later from Brandon.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/22/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:09:22_bun_bo_hue.mp4.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Enjoying some bun bo hue.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/23/23</span>
+                    <img src="mandy/2023/2023:09:23_tofu.jpg" alt="tofu" />
+                    <div class="media-caption">Tofu time 🍲. This was with the fam!</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/29/23</span>
+                    <img src="mandy/2023/2023:09:29_my_clothes.jpeg" alt="my clothes" />
+                    <div class="media-caption">Wearing Brandon's clothes 👕 lol.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">10/28/23</span>
+                    <img src="mandy/2023/2023:10:28_rave_fit.jpeg" alt="rave_fit"/>
+                    <div class="media-caption">One of my favorite pictures of Mandy in her rave fit!</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/17/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:11:17_magnus_tricks.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Magnus showing off his tricks to Mandy and Brandon.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">12/14/23</span>
+                    <img src="mandy/2023/2023:12:14_gordon.jpeg" alt="gordon"/>
+                    <div class="media-caption">Mandy trying one of Gordon's dishes yum 🍽️</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">12/15/23</span>
+                    <video controls>
+                        <source src="mandy/2023/2023:12:15_beaver.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy as a beaver lol.</div>
+                </div>
+                
+
+
+
+                <!-- 2024  -->
+                <div class="gallery-item">
+                    <span class="media-type">02/14/24</span>
+                    <img src="mandy/2024/2024:02:14_valentines.jpeg" alt="valentines" />
+                    <div class="media-caption">Valentines day with Legos 💝</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <span class="media-type">05/08/24</span>
+                    <img src="mandy/2024/2024:05:08_drunk.jpeg" alt="drunk" />
+                    <div class="media-caption">Drunk again 🍷 as usual.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">06/03/24</span>
+                    <img src="mandy/2024/2024:06:03_funny.jpeg" alt="funny" />
+                    <div class="media-caption">This picture of Mandy had me laughing for a while.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">07/27/24</span>
+                    <img src="mandy/2024/2024:07:27_mandy_beauty.jpeg" alt="mandy beauty" />
+                    <div class="media-caption">Picture that describes Mandy's beauty.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">07/27/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:07:27_arcade.MOV" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy shooting them animals at the arcade in Seattle! 🎯</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">08/22/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:08:22_asleep.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy falling asleep with Sienna 😴. Always sleeping smh.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/06/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:09:06_rock_climbing.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy's first time sending it on the V4 wall! </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <span class="media-type">09/23/24</span>
+                    <img src="mandy/2024/2024:09:23_gattis.jpeg" alt="gattis" />
+                    <div class="media-caption">Getting Gattis ice cream 🍦</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">09/23/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:09:23_chopin_makeup.MOV" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Chopin getting his makeup done by Mandy hehe.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">10/03/24</span>
+                    <img src="mandy/2024/2024:10:03_blanton.jpeg" alt="blanton" />
+                    <div class="media-caption">Date at Blanton museum.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">10/15/24</span>
+                    <img src="mandy/2024/2024:10:15_chopin.jpeg" alt="chopin" />
+                    <div class="media-caption">Mandy holding Chopin.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/03/24</span>
+                    <img src="mandy/2024/2024:11:03_roach.jpeg" alt="roach" />
+                    <div class="media-caption">Looking like a roach in Chicago haha.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/24/24</span>
+                    <img src="mandy/2024/2024:11:24_grad.jpeg" alt="grad" />
+                    <div class="media-caption">Looking good grad pic of Mandy.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/24/24</span>
+                    <img src="mandy/2024/2024:11:24_grad2.jpeg" alt="grad2" />
+                    <div class="media-caption">Mandy in her ao dai. Em la dep gai!  </div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/24/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:11:24_grad_vid.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Grad spin :0</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">12/23/24</span>
+                    <img src="mandy/2024/2024:12:23_skiiing.jpeg" alt="skiiing" />
+                    <div class="media-caption">Mandy died on the ski slopes RIP. Had to save her.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">11/25/24</span>
+                    <img src="mandy/2024/2024:12:25_ski_gear.jpeg" alt="ski gear" />
+                    <div class="media-caption">Mandy ski gear stealing my flip flops.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">12/25/24</span>
+                    <video controls>
+                        <source src="mandy/2024/2024:12:25_ski_nice.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Getting good at skiing ⛷️. Almost got a black diamond.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">12/28/24</span>
+                    <video controls>
+                        <source src="mandy/2025/2024:12:28_clay_making.MOV" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy making clay art penguins.</div>
+                </div>
+                
+
+
+
+
+                <!-- 2025 -->
+                <div class="gallery-item">
+                    <span class="media-type">01/06/25</span>
+                    <img src="mandy/2025/2025:01:06_bruno_surgery.JPG" alt="bruno surgery" />
+                    <div class="media-caption">Bruno's surgery day. :0</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">03/16/25</span>
+                    <img src="mandy/2025/2025:03:16_gardens_singapore.jpeg" alt="gardens singapore" />
+                    <div class="media-caption">Mandy in the gardens of Singapore.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">03/20/25</span>
+                    <video controls>
+                        <source src="mandy/2025/2025:03:20_capybara.MOV" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Mandy made friends with a capybara in Vietnam. I don't think he liked her. </div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">03/22/25</span>
+                    <img src="mandy/2025/2025:03:22_coco_boats.jpeg" alt="coco boats" />
+                    <div class="media-caption">Riding the coco boats in Vietnam. We were Korean this day.</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <span class="media-type">03/22/25</span>
+                    <img src="mandy/2025/2025:03:22_hoi_an.jpeg" alt="hoi an" />
+                    <div class="media-caption">She looks very pretty in Hoi An.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">05/20/25</span>
+                    <video controls>
+                        <source src="mandy/2025/2025:05:20_miu_biting.mov" type="video/mp4">
+                    </video>
+                    <div class="media-caption">Miu Miu biting Mandy. Good job Miu Miu.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type">05/26/25</span>
+                    <img src="mandy/2025/2025:05:26_miumiu_mandy.jpeg" alt="miumiu mandy" />
+                    <div class="media-caption">Mandy and Miu Miu they both sleep a lot.</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type"></span>
+                    <img src="" alt="" />
+                    <div class="media-caption">future pic</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type"></span>
+                    <img src="" alt="" />
+                    <div class="media-caption">future pic</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type"></span>
+                    <img src="" alt="" />
+                    <div class="media-caption">future pic</div>
+                </div>
+
+                <div class="gallery-item">
+                    <span class="media-type"></span>
+                    <img src="" alt="" />
+                    <div class="media-caption">future vid</div>
+                </div>
+
             </div>
         </main>
 
