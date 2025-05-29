@@ -160,6 +160,95 @@ function createMagnus() {
     moveMagnus();
 }
 
+// Create falling photo element
+function createFallingPhoto() {
+    const element = document.createElement('div');
+    element.className = 'falling-photo';
+    
+    // List of actual image files
+    const images = [
+        // 2023 photos
+        'mandy/2023/2023:12:14_gordon.jpeg',
+        'mandy/2023/2023:10:28_rave_fit.jpeg',
+        'mandy/2023/2023:09:29_my_clothes.jpeg',
+        'mandy/2023/2023:08:26_20bday_dinner.jpeg',
+        'mandy/2023/2023:05:18_croissant.jpeg',
+        'mandy/2023/2023:04:09_post_throwup.jpeg',
+        'mandy/2023/2023:06:08_smolder.jpg',
+        'mandy/2023/2023:05:25_roadtrip.jpg',
+        'mandy/2023/2023:04:21_hotpot_date.JPG',
+        'mandy/2023/2023:04:15_beautiful.jpg',
+        'mandy/2023/2023:09:23_tofu.jpg',
+        'mandy/2023/2023:03:29_penguin.jpeg',
+        'moments/2023/2023:12:14_las_vegas.jpeg',
+        'moments/2023/2023:11:17_ba_ngoai.jpeg',
+        'moments/2023/2023:10:29_freaky.jpeg',
+        'moments/2023/2023:10:29_rave.jpeg',
+        'moments/2023/2023:10:13_ACL.jpeg',
+        'moments/2023/2023:04:14_first_concert.jpeg',
+        'moments/2023/2023:02:14_first_date.jpeg',
+        'moments/2023/2023:05:01_flic.jpg',
+        'moments/2023/2023:06:01_thrift.JPG',
+        'moments/2023/2023:10:14_ACL2.jpg',
+        'moments/2023/2023:04:01_longhorn_run.jpg',
+        // 2024 photos
+        'mandy/2024/2024:07:27_mandy_beauty.jpeg',
+        'mandy/2024/2024:06:03_funny.jpeg',
+        'mandy/2024/2024:12:25_ski_gear.jpeg',
+        'mandy/2024/2024:12:23_skiiing.jpeg',
+        'mandy/2024/2024:11:24_grad.jpeg',
+        'mandy/2024/2024:10:15_chopin.jpeg',
+        'mandy/2024/2024:10:03_blanton.jpeg',
+        'mandy/2024/2024:09:23_gattis.jpeg',
+        'mandy/2024/2024:05:08_drunk.jpeg',
+        'mandy/2024/2024:02:14_valentines.jpeg',
+        'mandy/2024/2024:11:24_grad2.jpeg',
+        'mandy/2024/2024:11:03_roach.jpeg',
+        'moments/2024/2024:07:26_seattle.PNG',
+        'moments/2024/2024:11:03_chicago.jpeg',
+        'moments/2024/2024:12:24_ski_smolder.JPG',
+        'moments/2024/2024:05:01_glasses.jpeg',
+        'moments/2024/2024:10:16_study_acc.jpeg',
+        'moments/2024/2024:10:25_halloween.jpeg',
+        'moments/2024/2024:07:28_seattle.jpeg',
+        'moments/2024/2024:05:10_brandon_grad.jpeg',
+        'moments/2024/2024:02:10_temple.jpeg',
+        'moments/2024/2024:12:24_ski_town.jpeg',
+        'moments/2024/2024:11:25_grad_pics.jpeg',
+        'moments/2024/2024:09:15_feeding.jpg'
+    ];
+    
+    // Create an image element
+    const img = document.createElement('img');
+    img.src = images[Math.floor(Math.random() * images.length)];
+    img.style.width = (Math.random() * 50 + 50) + 'px'; // Random width between 50-100px
+    img.style.height = 'auto';
+    img.style.borderRadius = '8px';
+    img.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+    
+    element.appendChild(img);
+    
+    // Position and animation properties
+    // Randomly choose left or right side
+    const isLeftSide = Math.random() < 0.5;
+    // Position between 0-20% for left side or 80-100% for right side
+    const position = isLeftSide ? 
+        Math.random() * 20 : // 0-25% for left side
+        80 + Math.random() * 20; // 75-100% for right side
+    element.style.left = position + 'vw';
+    
+    element.style.animationDuration = (Math.random() * 2 + 4) + 's';
+    const rot = Math.floor(Math.random() * 360);
+    element.style.transform = `rotate(${rot}deg)`;
+    
+    document.body.appendChild(element);
+    
+    // Remove element after animation
+    element.addEventListener('animationend', () => {
+        element.remove();
+    });
+}
+
 window.addEventListener('load', () => {
     // Create Magnus
     createMagnus();
@@ -168,11 +257,18 @@ window.addEventListener('load', () => {
     if (window.location.pathname.endsWith('main.html')) {
         // Create falling elements more frequently and in bursts
         setInterval(() => {
-            const count = Math.floor(Math.random() * 3) + 2; // 2-4 elements per burst
-            for (let i = 0; i < count; i++) {
+            // Create emojis
+            const emojiCount = Math.floor(Math.random() * 2) + 1; // 2-4 emojis per burst
+            for (let i = 0; i < emojiCount; i++) {
                 const types = ['bunny', 'boba', 'yarn', 'balloon'];
                 const type = types[Math.floor(Math.random() * types.length)];
                 createFallingElement(type);
+            }
+            
+            // Create photos independently
+            const photoCount = Math.floor(Math.random() * 3) + 2; // 2-4 photos per burst
+            for (let i = 0; i < photoCount; i++) {
+                createFallingPhoto();
             }
         }, 500);
     }

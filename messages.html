@@ -249,19 +249,19 @@
         <a href="main.html" class="back-button">← Back to Home</a>
         
         <main>
-            <div class="message-box">
+            <div class="message-box" id="brandon-message">
                 <div class="envelope-base"></div>
                 <div class="envelope-flap envelope-flap-top"></div>
                 <div class="envelope-flap envelope-flap-bottom"></div>
                 <div class="envelope-flap envelope-flap-left"></div>
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
-                <div class="wax-seal">💌</div>
+                <div class="wax-seal">🔒</div>
                 <div class="message-author">From: Brandon</div>
-                <div class="message-content">
+                <div class="message-content" style="display: none;">
                     Happy Birthday, Mandy! You make every day special just by being you. I'm so grateful to have you in my life. 
                 </div>
-                <img class="message-img" src="family_friends/brandon_mandy.jpeg" alt="Brandon and Mandy" />
+                <img class="message-img" src="family_friends/brandon_mandy.jpeg" alt="Brandon and Mandy" style="display: none;" />
             </div>
 
             <div class="message-box">
@@ -330,10 +330,27 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const messageBoxes = document.querySelectorAll('.message-box');
+            let brandonMessageUnlocked = false;
             
             messageBoxes.forEach(box => {
                 box.addEventListener('click', function() {
-                    this.classList.toggle('open');
+                    if (this.id === 'brandon-message') {
+                        if (!brandonMessageUnlocked) {
+                            const password = prompt('Enter password to read this message:');
+                            if (password === 'brandon') {
+                                brandonMessageUnlocked = true;
+                                this.querySelector('.message-content').style.display = 'block';
+                                this.querySelector('.message-img').style.display = 'block';
+                                this.classList.add('open');
+                            } else {
+                                alert('Incorrect password!');
+                            }
+                        } else {
+                            this.classList.toggle('open');
+                        }
+                    } else {
+                        this.classList.toggle('open');
+                    }
                 });
             });
         });

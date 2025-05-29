@@ -401,4 +401,29 @@ footer {
     p, .pixel-list {
         font-size: 0.7em;
     }
+}
+
+@keyframes falling-photo {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.75;
+    }
+}
+
+.falling-photo {
+    position: fixed;
+    top: -100px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: falling-photo 8s linear forwards;
+}
+
+.falling-photo img {
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 } 
