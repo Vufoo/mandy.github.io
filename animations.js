@@ -216,24 +216,28 @@ function createFallingPhoto() {
         'moments/2024/2024:12:24_ski_town.jpeg',
         'moments/2024/2024:11:25_grad_pics.jpeg',
         'moments/2024/2024:09:15_feeding.jpg',
-
-
+        // 2025 photos
         'mandy/2025/2025:01:06_bruno_surgery.JPG',
         'mandy/2025/2025:03:16_gardens_singapore.jpeg',
         'mandy/2025/2025:03:22_coco_boats.jpeg',
         'mandy/2025/2025:03:22_hoi_an.jpeg',
         'mandy/2025/2025:05:26_miumiu_mandy.jpeg',
         'mandy/2025/2025:05:29_miu_mandy_sleep.jpg',
-
-        
         'moments/2025/2025:03:21_massage.jpeg',
         'moments/2025/2025:03:22_hoian_mirror.jpeg',
         'moments/2025/2025:05:10_mandy_grad.jpeg',
         'moments/2025/2025:05:11_fountain.jpeg',
         'moments/2025/2025:05:17_miumiu.jpeg',
-        
-        
-
+        // Pet photos
+        'pets/2024:11:26_magnus_bonnet.jpeg',
+        // Additional photos from moments/2024
+        'moments/2024/2024:12:24_ski_town.jpeg',
+        'moments/2024/2024:11:25_grad_pics.jpeg',
+        'moments/2024/2024:09:15_feeding.jpg',
+        // Additional photos from mandy/2024
+        'mandy/2024/2024:12:25_ski_gear.jpeg',
+        'mandy/2024/2024:12:23_skiiing.jpeg',
+        'mandy/2024/2024:11:24_grad2.jpeg'
     ];
     
     // Create an image element

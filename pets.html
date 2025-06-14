@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Pets - Birthday Surprise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .gallery-item {
+            background: white;
+            border: 4px solid var(--primary-pink);
+            padding: 10px;
+            box-shadow: 8px 8px 0 var(--primary-pink);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .gallery-item video {
+            background: #000;
+        }
+        
+        .media-caption {
+            font-size: 0.8em;
+            color: var(--dark-pink);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .media-type {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-pink);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border: 2px solid var(--dark-pink);
+            border-radius: 6px;
+            font-family: inherit;
+            z-index: 2;
+            box-shadow: 2px 2px 0 var(--secondary-pink);
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-size: 0.8em;
+        }
+        
+        .back-button:hover {
+            color: var(--dark-pink);
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-pink);
+            margin: 30px 0 20px;
+            font-size: 1.2em;
+        }
+
+        .pet-section {
+            margin-bottom: 40px;
+        }
+
+        .pet-name {
+            text-align: center;
+            color: var(--primary-pink);
+            margin: 20px 0;
+            font-size: 1.4em;
+            text-shadow: 2px 2px 0 var(--secondary-pink);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="pixel-text">Our Pets</h1>
+            <div class="pixel-heart">🐾</div>
+        </header>
+        
+        <a href="main.html" class="back-button">← Back to Home</a>
+        
+        <main>
+            <!-- Magnus Section -->
+            <div class="pet-section">
+                <h2 class="pet-name">Magnus 🐕</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <span class="media-type">11/26/24</span>
+                        <img src="pets/2024:11:26_magnus_bonnet.jpeg" alt="Magnus in bonnet" />
+                        <div class="media-caption">Magnus looking adorable in his bonnet.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miu Miu Section -->
+            <div class="pet-section">
+                <h2 class="pet-name">Miu Miu 🐱</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <span class="media-type">05/26/25</span>
+                        <img src="mandy/2025/2025:05:26_miumiu_mandy.jpeg" alt="Miu Miu with Mandy" />
+                        <div class="media-caption">Miu Miu cuddling with Mandy.</div>
+                    </div>
+                    <div class="gallery-item">
+                        <span class="media-type">05/29/25</span>
+                        <img src="mandy/2025/2025:05:29_miu_mandy_sleep.jpg" alt="Miu Miu sleeping" />
+                        <div class="media-caption">Miu Miu sleeping peacefully.</div>
+                    </div>
+                    <div class="gallery-item">
+                        <span class="media-type">05/17/25</span>
+                        <img src="moments/2025/2025:05:17_miumiu.jpeg" alt="Miu Miu" />
+                        <div class="media-caption">Miu Miu with us!</div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </main>
+    </div>
+</body>
+</html> 
