@@ -76,6 +76,120 @@
             margin: 30px 0 20px;
             font-size: 1.2em;
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .moments-gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 0;
+            }
+
+            .moments-item {
+                padding: 12px;
+                box-shadow: 6px 6px 0 var(--dark-pink);
+            }
+
+            .moments-item:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+
+            .moments-caption {
+                font-size: 0.7em;
+                margin-top: 12px;
+                line-height: 1.5;
+            }
+
+            .moments-date {
+                top: 8px;
+                left: 8px;
+                padding: 4px 8px;
+                font-size: 0.5em;
+            }
+
+            .back-button {
+                font-size: 0.7em;
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                font-size: 1em;
+                margin: 20px 0 15px;
+            }
+
+            /* Adjust header for mobile */
+            header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .pixel-text {
+                font-size: 1.2em;
+            }
+
+            .pixel-heart {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .moments-gallery {
+                gap: 12px;
+                padding: 10px 0;
+            }
+
+            .moments-item {
+                padding: 10px;
+                box-shadow: 4px 4px 0 var(--dark-pink);
+            }
+
+            .moments-caption {
+                font-size: 0.65em;
+                margin-top: 10px;
+            }
+
+            .moments-date {
+                top: 6px;
+                left: 6px;
+                padding: 3px 6px;
+                font-size: 0.45em;
+            }
+
+            .back-button {
+                font-size: 0.65em;
+                margin-bottom: 12px;
+            }
+
+            header {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .pixel-text {
+                font-size: 1em;
+            }
+
+            .pixel-heart {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Ensure videos are responsive */
+        .moments-item video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .moments-item {
+                min-height: 200px; /* Ensure minimum touch target size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -340,8 +454,8 @@
 
                 <div class="moments-item">
                     <span class="moments-date"></span>
-                    <img src="" alt="">
-                    <div class="moments-caption">future pic</div>
+                    <img src="moments/2025/2025:07:09_bufalina.jpeg" alt="bufalina">
+                    <div class="moments-caption">At Bufalinas pizza time</div>
                 </div>
 
                 <div class="moments-item">

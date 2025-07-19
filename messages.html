@@ -222,6 +222,148 @@
             color: var(--dark-pink);
         }
 
+        .section-title {
+            text-align: center;
+            color: var(--primary-pink);
+            margin: 30px 0 20px;
+            font-size: 1.2em;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .message-box {
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 6px 6px 0 var(--primary-pink);
+                min-height: 150px;
+            }
+
+            .message-box:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+
+            .message-author {
+                font-size: 0.8em;
+                margin-bottom: 8px;
+                padding: 8px;
+            }
+
+            .message-content {
+                font-size: 0.7em;
+                line-height: 1.6;
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .message-box.open .message-content {
+                margin-top: 12px;
+            }
+
+            .message-img {
+                max-width: 100px;
+                max-height: 100px;
+                margin: 8px auto;
+            }
+
+            .wax-seal {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+
+            .back-button {
+                font-size: 0.7em;
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                font-size: 1em;
+                margin: 20px 0 15px;
+            }
+
+            /* Adjust header for mobile */
+            header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .pixel-text {
+                font-size: 1.2em;
+            }
+
+            .pixel-heart {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .message-box {
+                padding: 12px;
+                margin-bottom: 12px;
+                box-shadow: 4px 4px 0 var(--primary-pink);
+                min-height: 120px;
+            }
+
+            .message-author {
+                font-size: 0.7em;
+                margin-bottom: 6px;
+                padding: 6px;
+            }
+
+            .message-content {
+                font-size: 0.65em;
+                line-height: 1.5;
+                padding: 12px;
+                margin-top: 12px;
+            }
+
+            .message-box.open .message-content {
+                margin-top: 10px;
+            }
+
+            .message-img {
+                max-width: 80px;
+                max-height: 80px;
+                margin: 6px auto;
+            }
+
+            .wax-seal {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9em;
+            }
+
+            .back-button {
+                font-size: 0.65em;
+                margin-bottom: 12px;
+            }
+
+            header {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .pixel-text {
+                font-size: 1em;
+            }
+
+            .pixel-heart {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .message-box {
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            }
+        }
+
         @keyframes letterOpen {
             0% {
                 transform: scale(1);
@@ -259,9 +401,12 @@
                 <div class="wax-seal">🔒</div>
                 <div class="message-author">Brandon</div>
                 <div class="message-content" style="display: none;">
-                    Happy Birthday, Mandy! You make every day special just by being you. I'm so grateful to have you in my life. 
+                    Happy Birthday, Mandy! I wanted to make this so you could have something have forever and look back on. I want to be along with you 
+                    for all the moments in your life and this is something that I think shows how I see you everyday. I like to look back on our special memories
+                    together and in our own lives. But I'm excited to make evenmore memories with you and I'm grateful that you let me share these moments with you. There are many things I can't put into words but
+                    I want to say I love you more than you know. I'll always be here for you. I hope you have a great birthday and I hope you enjoy your gifts including this one!
                 </div>
-                <img class="message-img" src="family_friends/brandon_mandy.jpeg" alt="Brandon and Mandy" style="display: none;" />
+                <img class="message-img" src="messages/image000000.gif" alt="Brandon and Mandy" style="display: none;" />
             </div>
 
             <div class="message-box">

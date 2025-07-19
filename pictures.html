@@ -79,6 +79,120 @@
             margin: 30px 0 20px;
             font-size: 1.2em;
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 0;
+            }
+
+            .gallery-item {
+                padding: 12px;
+                box-shadow: 6px 6px 0 var(--primary-pink);
+            }
+
+            .gallery-item:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+
+            .media-caption {
+                font-size: 0.7em;
+                margin-top: 12px;
+            }
+
+            .media-type {
+                top: 8px;
+                left: 8px;
+                padding: 4px 8px;
+                font-size: 0.6em;
+                box-shadow: 1px 1px 0 var(--secondary-pink);
+            }
+
+            .back-button {
+                font-size: 0.7em;
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                font-size: 1em;
+                margin: 20px 0 15px;
+            }
+
+            /* Adjust header for mobile */
+            header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .pixel-text {
+                font-size: 1.2em;
+            }
+
+            .pixel-heart {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .gallery {
+                gap: 12px;
+                padding: 10px 0;
+            }
+
+            .gallery-item {
+                padding: 10px;
+                box-shadow: 4px 4px 0 var(--primary-pink);
+            }
+
+            .media-caption {
+                font-size: 0.65em;
+                margin-top: 10px;
+            }
+
+            .media-type {
+                top: 6px;
+                left: 6px;
+                padding: 3px 6px;
+                font-size: 0.5em;
+            }
+
+            .back-button {
+                font-size: 0.65em;
+                margin-bottom: 12px;
+            }
+
+            header {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .pixel-text {
+                font-size: 1em;
+            }
+
+            .pixel-heart {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Ensure videos are responsive */
+        .gallery-item video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .gallery-item {
+                min-height: 200px; /* Ensure minimum touch target size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -442,7 +556,7 @@
                 <div class="gallery-item">
                     <span class="media-type">06/19/25</span>
                     <video controls>
-                        <source src="mandy/2025/2025:06:19_workout.MOV" type="video/mp4">
+                        <source src="mandy/2025/2025:06:19_workingout.MOV" type="video/mp4">
                     </video>
                     <div class="media-caption">She getting those abs doing wiggles lol.</div>
                 </div>
@@ -453,7 +567,19 @@
                     <div class="media-caption">Interesting workout here.</div>
                 </div>
 
+                <div class="gallery-item">
+                    <span class="media-type">07/09/25</span>
+                    <img src="mandy/2025/2025:07:09_date_night.jpeg" alt="mandy date night" />
+                    <div class="media-caption">Date night with Mandy.</div>
+                </div>
 
+                <div class="gallery-item">
+                    <span class="media-type">07/29/25</span>
+                    <img src="" alt="mandy" />
+                    <div class="media-caption">Future pic</div>
+                </div>
+
+                
             </div>
         </main>
 

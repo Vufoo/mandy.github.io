@@ -223,13 +223,40 @@ function createFallingPhoto() {
         'mandy/2025/2025:03:22_hoi_an.jpeg',
         'mandy/2025/2025:05:26_miumiu_mandy.jpeg',
         'mandy/2025/2025:05:29_miu_mandy_sleep.jpg',
+        'mandy/2025/2025:06:10_mandy_workout.jpeg',
+        'mandy/2025/2025:06:12_makeup.jpeg',
+        'mandy/2025/2025:06:19_set.jpeg',
+        'mandy/2025/2025:07:09_date_night.jpeg',
         'moments/2025/2025:03:21_massage.jpeg',
         'moments/2025/2025:03:22_hoian_mirror.jpeg',
         'moments/2025/2025:05:10_mandy_grad.jpeg',
         'moments/2025/2025:05:11_fountain.jpeg',
         'moments/2025/2025:05:17_miumiu.jpeg',
+        'moments/2025/2025:06:19_gym.jpeg',
+        'moments/2025/2025:06:26_honors.jpeg',
+        'moments/2025/2025:07:09_bufalina.jpeg',
         // Pet photos
+        'pets/2023:10:12_m2.jpeg',
+        'pets/2023:10:12_dead_magnus.jpeg',
+        'pets/2024:09:26_chopin.jpeg',
+        'pets/2024:09:28_magnus_hat.jpeg',
+        'pets/2024:11:17_tieu.jpeg',
         'pets/2024:11:26_magnus_bonnet.jpeg',
+        'pets/2024:12:15_magnus_travel.jpeg',
+        'pets/2025:03:20_vietnam_dogs.jpeg',
+        'pets/2025:04:27_tieu_jail.JPG',
+        'pets/2025:05:11_miu_ball.jpeg',
+        'pets/2025:05:20_miu_gut.jpeg',
+        'pets/2025:05:26_miu_sleep.jpeg',
+        'pets/2025:05:30_miu_cute.jpeg',
+        'pets/2025:05:31_vet.jpeg',
+        'pets/2025:06:04_m1.jpeg',
+        'pets/2025:06:06_miu_model.jpeg',
+        'pets/2025:06:20_mandy_pets.JPG',
+        'pets/2025:06:21_tieu_miu.jpeg',
+        'pets/2025:06:22_daughter.jpeg',
+        'pets/2025_06_24_miu_sleep2.jpeg',
+        'pets/2025:07:17_nini.jpeg',
         // Additional photos from moments/2024
         'moments/2024/2024:12:24_ski_town.jpeg',
         'moments/2024/2024:11:25_grad_pics.jpeg',
@@ -237,7 +264,9 @@ function createFallingPhoto() {
         // Additional photos from mandy/2024
         'mandy/2024/2024:12:25_ski_gear.jpeg',
         'mandy/2024/2024:12:23_skiiing.jpeg',
-        'mandy/2024/2024:11:24_grad2.jpeg'
+        'mandy/2024/2024:11:24_grad2.jpeg',
+        // First met photo
+        'moments/2022:10:01_first_met.jpg'
     ];
     
     // Create an image element

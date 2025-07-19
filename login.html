@@ -63,6 +63,136 @@
             margin-top: 10px;
             display: none;
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .password-container {
+                max-width: 90%;
+                margin: 60px auto;
+            }
+
+            .password-box {
+                padding: 20px;
+                box-shadow: 6px 6px 0 var(--primary-pink);
+            }
+
+            .password-input {
+                padding: 12px;
+                margin: 15px 0;
+                font-size: 0.7em;
+                border-width: 3px;
+            }
+
+            .submit-button {
+                padding: 12px 25px;
+                font-size: 0.7em;
+                border-width: 3px;
+                box-shadow: 3px 3px 0 var(--dark-pink);
+            }
+
+            .submit-button:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+
+            .submit-button:active {
+                transform: translate(1px, 1px);
+                box-shadow: 2px 2px 0 var(--dark-pink);
+            }
+
+            .error-message {
+                font-size: 0.6em;
+                margin-top: 8px;
+            }
+
+            /* Adjust header for mobile */
+            header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .pixel-text {
+                font-size: 1.2em;
+            }
+
+            .pixel-heart {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1em;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .password-container {
+                max-width: 95%;
+                margin: 40px auto;
+            }
+
+            .password-box {
+                padding: 15px;
+                box-shadow: 4px 4px 0 var(--primary-pink);
+            }
+
+            .password-input {
+                padding: 10px;
+                margin: 12px 0;
+                font-size: 0.65em;
+                border-width: 2px;
+            }
+
+            .submit-button {
+                padding: 10px 20px;
+                font-size: 0.65em;
+                border-width: 2px;
+                box-shadow: 2px 2px 0 var(--dark-pink);
+            }
+
+            .submit-button:active {
+                transform: translate(1px, 1px);
+                box-shadow: 1px 1px 0 var(--dark-pink);
+            }
+
+            .error-message {
+                font-size: 0.55em;
+                margin-top: 6px;
+            }
+
+            header {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .pixel-text {
+                font-size: 1em;
+            }
+
+            .pixel-heart {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 0.9em;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .submit-button {
+                min-height: 44px; /* Ensure minimum touch target size */
+                -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            }
+
+            .password-input {
+                min-height: 44px; /* Ensure minimum touch target size */
+            }
+        }
     </style>
 </head>
 <body>

@@ -91,6 +91,130 @@
             font-size: 1.4em;
             text-shadow: 2px 2px 0 var(--secondary-pink);
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 0;
+            }
+
+            .gallery-item {
+                padding: 12px;
+                box-shadow: 6px 6px 0 var(--primary-pink);
+            }
+
+            .gallery-item:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+
+            .media-caption {
+                font-size: 0.7em;
+                margin-top: 12px;
+            }
+
+            .media-type {
+                top: 8px;
+                left: 8px;
+                padding: 4px 8px;
+                font-size: 0.6em;
+                box-shadow: 1px 1px 0 var(--secondary-pink);
+            }
+
+            .back-button {
+                font-size: 0.7em;
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                font-size: 1em;
+                margin: 20px 0 15px;
+            }
+
+            .pet-name {
+                font-size: 1.2em;
+                margin: 15px 0;
+            }
+
+            /* Adjust header for mobile */
+            header {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .pixel-text {
+                font-size: 1.2em;
+            }
+
+            .pixel-heart {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .gallery {
+                gap: 12px;
+                padding: 10px 0;
+            }
+
+            .gallery-item {
+                padding: 10px;
+                box-shadow: 4px 4px 0 var(--primary-pink);
+            }
+
+            .media-caption {
+                font-size: 0.65em;
+                margin-top: 10px;
+            }
+
+            .media-type {
+                top: 6px;
+                left: 6px;
+                padding: 3px 6px;
+                font-size: 0.5em;
+            }
+
+            .back-button {
+                font-size: 0.65em;
+                margin-bottom: 12px;
+            }
+
+            .pet-name {
+                font-size: 1em;
+                margin: 12px 0;
+            }
+
+            header {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .pixel-text {
+                font-size: 1em;
+            }
+
+            .pixel-heart {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Ensure videos are responsive */
+        .gallery-item video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Improve touch targets on mobile */
+        @media (max-width: 768px) {
+            .gallery-item {
+                min-height: 200px; /* Ensure minimum touch target size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,9 +239,19 @@
                     <div class="media-caption">Magnus in a deep sleep lol</div>
                 </div>
                 <div class="gallery-item">
+                    <span class="media-type">09/26/24</span>
+                    <img src="pets/2024:09:26_chopin.jpeg" alt="Magnus chopin" />
+                    <div class="media-caption">Magnus violating Chopin :o</div>
+                </div>
+                <div class="gallery-item">
                     <span class="media-type">09/28/24</span>
                     <img src="pets/2024:09:28_magnus_hat.jpeg" alt="Magnus with hat" />
                     <div class="media-caption">Magnus wearing Brandon's hat.</div>
+                </div>
+                <div class="gallery-item">
+                    <span class="media-type">11/17/24</span>
+                    <img src="pets/2024:11:17_tieu.jpeg" alt="Tieu" />
+                    <div class="media-caption">Tieu with a hat</div>
                 </div>
                 <div class="gallery-item">
                     <span class="media-type">11/26/24</span>
@@ -125,9 +259,19 @@
                     <div class="media-caption">Magnus looking adorable in his bonnet.</div>
                 </div>
                 <div class="gallery-item">
+                    <span class="media-type">12/15/24</span>
+                    <img src="pets/2024:12:15_magnus_travel.jpeg" alt="Magnus traveling" />
+                    <div class="media-caption">Magnus trying to go to Singapore too!</div>
+                </div>
+                <div class="gallery-item">
                     <span class="media-type">03/20/25</span>
                     <img src="pets/2025:03:20_vietnam_dogs.jpeg" alt="Dogs in Vietnam" />
                     <div class="media-caption">Dogs we met in Vietnam.</div>
+                </div>
+                <div class="gallery-item">
+                    <span class="media-type">04/27/25</span>
+                    <img src="pets/2025:04:27_tieu_jail.JPG" alt="Tieu" />
+                    <div class="media-caption">Tieu in jail</div>
                 </div>
                 <div class="gallery-item">
                     <span class="media-type">05/11/25</span>
@@ -160,6 +304,11 @@
                     <div class="media-caption">Miu Miu sleeping with Mandy aww.</div>
                 </div>
                 <div class="gallery-item">
+                    <span class="media-type">05/30/25</span>
+                    <img src="pets/2025:05:30_miu_cute.jpeg" alt="Miu cute" />
+                    <div class="media-caption">Miu Miu's just looking cute.</div>
+                </div>
+                <div class="gallery-item">
                     <span class="media-type">05/31/25</span>
                     <img src="pets/2025:05:31_vet.jpeg" alt="Vet visit" />
                     <div class="media-caption">Miu Miu's first vet visit.</div>
@@ -180,6 +329,11 @@
                     <div class="media-caption">The gangs all sleeping.</div>
                 </div>
                 <div class="gallery-item">
+                    <span class="media-type">06/21/25</span>
+                    <img src="pets/2025:06:21_tieu_miu.jpeg" alt="Pets" />
+                    <div class="media-caption">Miu Miu tooks Tieus spot.</div>
+                </div>
+                <div class="gallery-item">
                     <span class="media-type">06/22/25</span>
                     <img src="pets/2025:06:22_daughter.jpeg" alt="Daughter" />
                     <div class="media-caption">Brandon's daughter.</div>
@@ -190,10 +344,13 @@
                     <div class="media-caption">Miu Miu sleeping soundly.</div>
                 </div>
                 <div class="gallery-item">
-                    <span class="media-type">12/15/25</span>
-                    <img src="pets/2025:12:15_magnus_travel.jpeg" alt="Magnus traveling" />
-                    <div class="media-caption">Magnus trying to go to Singapore too!</div>
+                    <span class="media-type">07/17/25</span>
+                    <img src="pets/2025:07:17_nini.jpeg" alt="Nini" />
+                    <div class="media-caption">Nini was trying to train Miu Miu.</div>
                 </div>
+                
+
+
             </div>
         </main>
     </div>
