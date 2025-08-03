@@ -222,6 +222,35 @@
             color: var(--dark-pink);
         }
 
+        .toggle-all-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-left: 15px;
+            background: var(--primary-pink);
+            color: white;
+            border: 3px solid var(--dark-pink);
+            padding: 10px 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7em;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 var(--dark-pink);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .toggle-all-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--dark-pink);
+        }
+
+        .toggle-all-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--dark-pink);
+        }
+
+        .toggle-all-btn.open {
+            background: var(--dark-pink);
+        }
+
         .section-title {
             text-align: center;
             color: var(--primary-pink);
@@ -274,6 +303,18 @@
             .back-button {
                 font-size: 0.7em;
                 margin-bottom: 15px;
+            }
+
+            .toggle-all-btn {
+                font-size: 0.6em;
+                padding: 8px 16px;
+                margin-bottom: 15px;
+                margin-left: 10px;
+                box-shadow: 3px 3px 0 var(--dark-pink);
+            }
+
+            .toggle-all-btn:hover {
+                transform: none; /* Disable hover effect on mobile */
             }
 
             .section-title {
@@ -342,6 +383,14 @@
                 margin-bottom: 12px;
             }
 
+            .toggle-all-btn {
+                font-size: 0.55em;
+                padding: 6px 12px;
+                margin-bottom: 12px;
+                margin-left: 8px;
+                box-shadow: 2px 2px 0 var(--dark-pink);
+            }
+
             header {
                 padding: 12px;
                 margin-bottom: 15px;
@@ -390,6 +439,8 @@
         
         <a href="main.html" class="back-button">← Back to Home</a>
         
+        <button id="toggleAllBtn" class="toggle-all-btn">Open All Messages</button>
+        
         <main>
             <div class="message-box" id="brandon-message">
                 <div class="envelope-base"></div>
@@ -401,10 +452,11 @@
                 <div class="wax-seal">🔒</div>
                 <div class="message-author">Brandon</div>
                 <div class="message-content" style="display: none;">
-                    Happy Birthday, Mandy! I wanted to make this so you could have something have forever and look back on. I want to be along with you 
-                    for all the moments in your life and this is something that I think shows how I see you everyday. I like to look back on our special memories
-                    together and in our own lives. But I'm excited to make evenmore memories with you and I'm grateful that you let me share these moments with you. There are many things I can't put into words but
+                    Happy Birthday, Mandy! I wanted to make this so you could have something to look back on throughout our relationship. I want to be along with you 
+                    for all the moments in your life and this is something that I think shows how I see you everyday. I like to reminisce on our special memories
+                    together and think what fun things we'll be doing later. But I'm excited to make more memories with you and I'm grateful that you let me share these moments with you. There are many things I can't put into words but
                     I want to say I love you more than you know. I'll always be here for you. I hope you have a great birthday and I hope you enjoy your gifts including this one!
+                    Your BF, Brandon 💕
                 </div>
                 <img class="message-img" src="messages/image000000.gif" alt="Brandon and Mandy" style="display: none;" />
             </div>
@@ -417,40 +469,10 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Emily</div>
-                <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
                 <div class="message-author">Mom</div>
-                <div class="message-content">
-                    Love
+                <div class="message-content">   
                 </div>
-                <img class="message-img" src="images/photo2.jpg" alt="Mandy and Mom" />
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Nini</div>
-                <div class="message-content">
-                    Love
-                </div>
-                
+                <img class="message-img" src="images/photo2.jpg" />
             </div>
 
             <div class="message-box">
@@ -463,7 +485,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Dad</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -475,9 +497,9 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Paola</div>
+                <div class="message-author">Emily</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -489,24 +511,11 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Vivian</div>
+                <div class="message-author">Nini</div>
                 <div class="message-content">
-                    Love
+                    Happy birthday Chi My! You are 22 now and moving to Houston! Are you excited? I hope that you have a great birthday and have a fun time in Houston!
                 </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Catherine</div>
-                <div class="message-content">
-                    Love
-                </div>
+                
             </div>
 
             <div class="message-box">
@@ -519,7 +528,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Michelle</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -533,7 +542,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Tiffany</div>
                 <div class="message-content">
-                    Love
+                    Happy Birthday, Chi My!! I'm always grateful for your support, food recs, and gym/yap sessions. I hope you have an amazing year as a 22 year old. You're one year closer to bà status 👵
                 </div>
             </div>
 
@@ -547,7 +556,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Taylor</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -561,7 +570,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Kelly</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -575,7 +584,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Kasey</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -589,7 +598,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Kathy</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -603,76 +612,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Kristy</div>
                 <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Abigail</div>
-                <div class="message-content">
-                    Love
-                </div>
-            </div>
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Hannah</div>
-                <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Emily Nguyen</div>
-                <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Alexis</div>
-                <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Jackie</div>
-                <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -686,7 +626,7 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Julian</div>
                 <div class="message-content">
-                    Love
+                    
                 </div>
             </div>
 
@@ -700,20 +640,6 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Vivi</div>
                 <div class="message-content">
-                    Love
-                </div>
-            </div>
-
-            <div class="message-box">
-                <div class="envelope-base"></div>
-                <div class="envelope-flap envelope-flap-top"></div>
-                <div class="envelope-flap envelope-flap-bottom"></div>
-                <div class="envelope-flap envelope-flap-left"></div>
-                <div class="envelope-flap envelope-flap-right"></div>
-                <div class="letter-pattern"></div>
-                <div class="wax-seal">✉️</div>
-                <div class="message-author">Aarya</div>
-                <div class="message-content">
                     
                 </div>
             </div>
@@ -726,8 +652,9 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Jessica</div>
+                <div class="message-author">Jessica L.</div>
                 <div class="message-content">
+                    happy 22nd mandy!!! im so glad i met you in singapore and were travel buddies in so many trips🤩 good luck in optometry school and hopefully have a meet up in vn/sg next year?🫣
                 </div>
             </div>
 
@@ -739,12 +666,12 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Adrian</div>
+                <div class="message-author">Nafissa Y.</div>
                 <div class="message-content">
-                    
+                    Happy birthday queen!!! Thank you for making me laugh during the hardest semesters of my entire college life, I literally would have died in Microbio without you. Thanks for being an amazing RA officer, and saving my butt when I had no idea what I was doing. I can’t wait to see all the amazing things you do, and don’t be surprised when I randomly text you about all the new Avatar stuff that comes out 🤩 love you!! ❤️❤️
                 </div>
             </div>
-            
+
             <div class="message-box">
                 <div class="envelope-base"></div>
                 <div class="envelope-flap envelope-flap-top"></div>
@@ -753,11 +680,157 @@
                 <div class="envelope-flap envelope-flap-right"></div>
                 <div class="letter-pattern"></div>
                 <div class="wax-seal">✉️</div>
-                <div class="message-author">Justin</div>
+                <div class="message-author">Arya A.</div>
                 <div class="message-content">
-                    
+                    Happy Birthday Mandy!!! It was great getting to know you throughout our study abroad. I’ve learned a lot about you, including your fascination with blind box toys. I still don’t get the appeal tbh. I hope you have a great birthday! Good luck w optometry school! And may you receive an endless supply of labubus 🙏 
                 </div>
             </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Amrit C.</div>
+                <div class="message-content">
+                    Happy birthday!!! 🎉🥳 Thank you for always being there when I needed you!                
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Christine N.</div>
+                <div class="message-content">
+                    HAPPY BIRTHDAY MANDY POO I MISS AND LOVE YOU SMMM!! i’m so happy we met all that time ago when i was in my freshman year at that pregame LOL but i’m glad we’ve kept in touch throughout all the years. i remember our bathroom breaks at the frats hahahah what a timeeee. but i’m so happy for you!! you’re gonna do great in optometry school and i hope i get to see you more when you come back during breaks! i hope you have the best birthday ever miss u!!     
+                </div>
+            </div>
+
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Britney D.</div>
+                <div class="message-content">
+                    Happy 22nd Birthday Mandy!! I hope your birthday is filled with so much love and joy! I’m very excited to be starting optometry school with you (study buddy time!) :)) We’ve had lots of memories together in college and hopefully we can continue to make more in the next 4 years! Happy happy birthday!!! Have an amazing day!                
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Mindy N.</div>
+                <div class="message-content">
+                    hello my goat. i hope u have the happiest birthday ever (inb4 opto school and bc u deserve it). hope to get to know u and spend more time with u these next 4 years. pls reach out to me if u ever need anything. 
+
+                    ps ur bf is so cute for organizing this hehe. 
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Hannah N.</div>
+                <div class="message-content">
+                    HAPPY BIRTHDAY MY LOVE ! meeting you was one of the biggest blessings in the past year. u a real one. ur family? baddies. i hope this year brings as much love and happiness that you brought me 🧡
+                </div>
+            </div>
+
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Sahana R.</div>
+                <div class="message-content">
+                    Happy Birthday Mandy!! ❤️ It was so fun getting to know you in Singapore and spend time with you on all our trips. You are so sweet, humble, and down to earth. Wishing you all the best in your next adventures and hope we can meet soon in Austin! Missing you!!            
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Alexis R.</div>
+                <div class="message-content">
+                    HAPPY BIRTHDAY MANDY!!! Thanks for being an incredible friend I can always count on. You’re of the most humble geniuses I’ve ever met LOL. I honestly don’t think I know anyone who can work hard and play hard as well as you can. Have a blast this birthday! Love you big girl!
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Pranav Y.</div>
+                <div class="message-content">
+                    Happy 22nd Birthday Mandy, I hope you have an amazing day with lots of fun, and are enjoying the summer!!!  Also you better make sure to come back to Austin whenever we have a UT Singapore reunion lol, but good luck in Houston!! 
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Abigail N.</div>
+                <div class="message-content">
+                    HAPPY BIRTHDAY MANDY! Genuinely so grateful to have crossed paths with an individual so intelligent, creative, and beautiful as you. It has been so fun watching you achieve all that you have in the past year of knowing you, and I can’t wait for all that’s yet to come. I hope you get to celebrate your special day well and I’m always looking forward to the next time we all hang out!  
+                </div>
+            </div>
+
+            <div class="message-box">
+                <div class="envelope-base"></div>
+                <div class="envelope-flap envelope-flap-top"></div>
+                <div class="envelope-flap envelope-flap-bottom"></div>
+                <div class="envelope-flap envelope-flap-left"></div>
+                <div class="envelope-flap envelope-flap-right"></div>
+                <div class="letter-pattern"></div>
+                <div class="wax-seal">✉️</div>
+                <div class="message-author">Adrian N.</div>
+                <div class="message-content">
+                    Chúc mừng sinh nhật Mandy! Cám ơn bạn đã giúp tôi học tiếng việt và cám ơn gia đình bạn đã cho tôi ăn luôn. Tôi nói tiếng việt giỏi hơn nhờ bạn giới thiệu chùa cho tôi. Cám ơn bạn nghe tôi tâm sự về love life của tôi. Bạn hiền lắm và tôi chúc bạn học hành tốt ở Houston!      
+                </div>
+            </div>
+
+
         </main>
 
         <footer>
@@ -767,7 +840,39 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const messageBoxes = document.querySelectorAll('.message-box');
+            const toggleAllBtn = document.getElementById('toggleAllBtn');
             let brandonMessageUnlocked = false;
+            let allMessagesOpen = false;
+            
+            // Toggle all messages function
+            function toggleAllMessages() {
+                allMessagesOpen = !allMessagesOpen;
+                
+                messageBoxes.forEach(box => {
+                    // Skip locked messages (like Brandon's before password)
+                    if (box.id === 'brandon-message' && !brandonMessageUnlocked) {
+                        return;
+                    }
+                    
+                    if (allMessagesOpen) {
+                        box.classList.add('open');
+                    } else {
+                        box.classList.remove('open');
+                    }
+                });
+                
+                // Update button text and style
+                if (allMessagesOpen) {
+                    toggleAllBtn.textContent = 'Close All Messages';
+                    toggleAllBtn.classList.add('open');
+                } else {
+                    toggleAllBtn.textContent = 'Open All Messages';
+                    toggleAllBtn.classList.remove('open');
+                }
+            }
+            
+            // Add click event to toggle all button
+            toggleAllBtn.addEventListener('click', toggleAllMessages);
             
             messageBoxes.forEach(box => {
                 box.addEventListener('click', function() {
@@ -779,14 +884,43 @@
                                 this.querySelector('.message-content').style.display = 'block';
                                 this.querySelector('.message-img').style.display = 'block';
                                 this.classList.add('open');
+                                
+                                // If all messages are currently open, keep this one open too
+                                if (allMessagesOpen) {
+                                    this.classList.add('open');
+                                }
                             } else {
                                 alert('Incorrect password!');
                             }
                         } else {
                             this.classList.toggle('open');
+                            
+                            // Update all messages state if this was the last one closed
+                            if (!this.classList.contains('open')) {
+                                const openMessages = document.querySelectorAll('.message-box.open');
+                                if (openMessages.length === 0) {
+                                    allMessagesOpen = false;
+                                    toggleAllBtn.textContent = 'Open All Messages';
+                                    toggleAllBtn.classList.remove('open');
+                                }
+                            }
                         }
                     } else {
                         this.classList.toggle('open');
+                        
+                        // Update all messages state
+                        const openMessages = document.querySelectorAll('.message-box.open');
+                        const totalUnlockedMessages = messageBoxes.length - (brandonMessageUnlocked ? 0 : 1);
+                        
+                        if (openMessages.length === totalUnlockedMessages) {
+                            allMessagesOpen = true;
+                            toggleAllBtn.textContent = 'Close All Messages';
+                            toggleAllBtn.classList.add('open');
+                        } else if (openMessages.length === 0) {
+                            allMessagesOpen = false;
+                            toggleAllBtn.textContent = 'Open All Messages';
+                            toggleAllBtn.classList.remove('open');
+                        }
                     }
                 });
             });
