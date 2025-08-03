@@ -50,6 +50,9 @@
             position: relative;
             z-index: 2;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .message-box.open .message-content {
@@ -60,9 +63,11 @@
         
         .message-img {
             display: block;
-            max-width: 120px;
-            max-height: 120px;
-            margin: 10px auto 10px auto;
+            width: 100%;
+            height: auto;
+            max-width: 180px;
+            max-height: 180px;
+            object-fit: cover;
             border-radius: 8px;
             border: 2px solid var(--secondary-pink);
             box-shadow: 2px 2px 0 var(--secondary-pink);
@@ -74,6 +79,17 @@
         .message-box.open .message-img {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Add a container for images to display horizontally */
+        .message-images-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+            width: 100%;
+            justify-items: center;
+            align-items: start;
         }
 
         /* Envelope Flaps */
@@ -288,10 +304,15 @@
                 margin-top: 12px;
             }
 
+            .message-images-container {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 10px;
+                margin-top: 12px;
+            }
+
             .message-img {
-                max-width: 100px;
-                max-height: 100px;
-                margin: 8px auto;
+                max-width: 140px;
+                max-height: 140px;
             }
 
             .wax-seal {
@@ -366,10 +387,15 @@
                 margin-top: 10px;
             }
 
+            .message-images-container {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 8px;
+                margin-top: 10px;
+            }
+
             .message-img {
-                max-width: 80px;
-                max-height: 80px;
-                margin: 6px auto;
+                max-width: 110px;
+                max-height: 110px;
             }
 
             .wax-seal {
@@ -458,7 +484,9 @@
                     I want to say I love you more than you know. I'll always be here for you. I hope you have a great birthday and I hope you enjoy your gifts including this one!
                     Your BF, Brandon 💕
                 </div>
-                <img class="message-img" src="messages/image000000.gif" alt="Brandon and Mandy" style="display: none;" />
+                <div class="message-images-container">
+                    <img class="message-img" src="messages/image000000.gif" alt="Brandon and Mandy" style="display: none;" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -472,7 +500,6 @@
                 <div class="message-author">Mom</div>
                 <div class="message-content">   
                 </div>
-                <img class="message-img" src="images/photo2.jpg" />
             </div>
 
             <div class="message-box">
@@ -515,7 +542,13 @@
                 <div class="message-content">
                     Happy birthday Chi My! You are 22 now and moving to Houston! Are you excited? I hope that you have a great birthday and have a fun time in Houston!
                 </div>
-                
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/PXL_20241103_203020116 - Sydney Nguyen.jpg" alt="Nini" />
+                    <img class="message-img" src="family_friends/PXL_20250528_191332766 - Sydney Nguyen.jpg" alt="Nini" />
+                    <img class="message-img" src="family_friends/PXL_20250528_201739932 - Sydney Nguyen.jpg" alt="Nini" />
+                    <img class="message-img" src="family_friends/PXL_20250604_194733703 - Sydney Nguyen.jpg" alt="Nini" />
+                    <img class="message-img" src="family_friends/PXL_20250611_184759155.MP - Sydney Nguyen.jpg" alt="" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -656,6 +689,13 @@
                 <div class="message-content">
                     happy 22nd mandy!!! im so glad i met you in singapore and were travel buddies in so many trips🤩 good luck in optometry school and hopefully have a meet up in vn/sg next year?🫣
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/E71ED391-F2DF-41C7-BA8B-D3ACC371B0F2 - Jessica Lam.jpeg" alt="Jessica Lam" />
+                    <img class="message-img" src="family_friends/C055A8AC-1DFF-4374-8F75-E28B3E40D22B - Jessica Lam.jpeg" alt="Jessica Lam" />
+                    <img class="message-img" src="family_friends/68819DDF-89E1-4F68-9571-0DB1E7F78F57 - Jessica Lam.jpeg" alt="Jessica Lam" />
+                    <img class="message-img" src="family_friends/6005A5B9-F148-4FB7-868A-DC73E611C13C - Jessica Lam.jpeg" alt="Jessica Lam" />
+                    <img class="message-img" src="family_friends/27BFD8E5-F3A2-407E-A71E-96CD4494879B - Jessica Lam.jpeg" alt="Jessica Lam" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -669,6 +709,10 @@
                 <div class="message-author">Nafissa Y.</div>
                 <div class="message-content">
                     Happy birthday queen!!! Thank you for making me laugh during the hardest semesters of my entire college life, I literally would have died in Microbio without you. Thanks for being an amazing RA officer, and saving my butt when I had no idea what I was doing. I can’t wait to see all the amazing things you do, and don’t be surprised when I randomly text you about all the new Avatar stuff that comes out 🤩 love you!! ❤️❤️
+                </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/76EA3FC1-EE51-46CE-B2F9-6DAF8723DCE2 - Nafisa Yusufali.JPG" alt="Nafisa Yusufali" />
+                    <img class="message-img" src="family_friends/8FA211D4-6DDD-4037-9579-5539920FDA75 - Nafisa Yusufali.JPG" alt="Nafisa Yusufali" />
                 </div>
             </div>
 
@@ -684,6 +728,13 @@
                 <div class="message-content">
                     Happy Birthday Mandy!!! It was great getting to know you throughout our study abroad. I’ve learned a lot about you, including your fascination with blind box toys. I still don’t get the appeal tbh. I hope you have a great birthday! Good luck w optometry school! And may you receive an endless supply of labubus 🙏 
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_9063 - Arya Anantula.jpeg" alt="Arya Anantula" />
+                    <img class="message-img" src="family_friends/IMG_7801 - Arya Anantula.jpeg" alt="Arya Anantula" />
+                    <img class="message-img" src="family_friends/IMG_4112 - Arya Anantula.jpeg" alt="Arya Anantula" />
+                    <img class="message-img" src="family_friends/IMG_0659 - Arya Anantula.jpeg" alt="Arya Anantula" />
+                    <img class="message-img" src="family_friends/DSC01116 - Arya Anantula.jpeg" alt="Arya Anantula" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -698,6 +749,9 @@
                 <div class="message-content">
                     Happy birthday!!! 🎉🥳 Thank you for always being there when I needed you!                
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_6117 - Amrit Chandar.jpeg" alt="Amrit Chandar" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -710,7 +764,14 @@
                 <div class="wax-seal">✉️</div>
                 <div class="message-author">Christine N.</div>
                 <div class="message-content">
-                    HAPPY BIRTHDAY MANDY POO I MISS AND LOVE YOU SMMM!! i’m so happy we met all that time ago when i was in my freshman year at that pregame LOL but i’m glad we’ve kept in touch throughout all the years. i remember our bathroom breaks at the frats hahahah what a timeeee. but i’m so happy for you!! you’re gonna do great in optometry school and i hope i get to see you more when you come back during breaks! i hope you have the best birthday ever miss u!!     
+                    HAPPY BIRTHDAY MANDY POO I MISS AND LOVE YOU SMMM!! i’m so happy we met all that time ago when i was in my freshman year at that pregame LOL but i’m glad we’ve kept in touch throughout all the years. i remember our bathroom breaks at the frats hahahah what a timeeee. but i’m so happy for you!! you're gonna do great in optometry school and i hope i get to see you more when you come back during breaks! i hope you have the best birthday ever miss u!!     
+                </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_8696 - christine t. nguyen.jpeg" alt="Christine T. Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_7261 - christine t. nguyen.jpeg" alt="Christine T. Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_6562 - christine t. nguyen.jpeg" alt="Christine T. Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_0587 - christine t. nguyen.jpeg" alt="Christine T. Nguyen" />
+                    <img class="message-img" src="family_friends/DSC03122 - christine t. nguyen.jpeg" alt="Christine T. Nguyen" />
                 </div>
             </div>
 
@@ -726,6 +787,13 @@
                 <div class="message-author">Britney D.</div>
                 <div class="message-content">
                     Happy 22nd Birthday Mandy!! I hope your birthday is filled with so much love and joy! I’m very excited to be starting optometry school with you (study buddy time!) :)) We’ve had lots of memories together in college and hopefully we can continue to make more in the next 4 years! Happy happy birthday!!! Have an amazing day!                
+                </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_6467 - Britney Dam.jpeg" alt="Britney Dam" />
+                    <img class="message-img" src="family_friends/IMG_6298 - Britney Dam.jpeg" alt="Britney Dam" />
+                    <img class="message-img" src="family_friends/IMG_2259 - Britney Dam.jpeg" alt="Britney Dam" />
+                    <img class="message-img" src="family_friends/20240901_142202_EA9B42 - Britney Dam.jpeg" alt="Britney Dam" />
+                    <img class="message-img" src="family_friends/2024-02-23 23_13_07.918_Original - Britney Dam.jpeg" alt="Britney Dam" />
                 </div>
             </div>
 
@@ -757,6 +825,13 @@
                 <div class="message-content">
                     HAPPY BIRTHDAY MY LOVE ! meeting you was one of the biggest blessings in the past year. u a real one. ur family? baddies. i hope this year brings as much love and happiness that you brought me 🧡
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_6021 - Hannah Nguyen.jpeg" alt="Hannah Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_6495 - Hannah Nguyen.jpeg" alt="Hannah Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_4339 - Hannah Nguyen.jpeg" alt="Hannah Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_1200 - Hannah Nguyen.jpeg" alt="Hannah Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_0517 - Hannah Nguyen.jpeg" alt="Hannah Nguyen" />
+                </div>
             </div>
 
 
@@ -772,6 +847,13 @@
                 <div class="message-content">
                     Happy Birthday Mandy!! ❤️ It was so fun getting to know you in Singapore and spend time with you on all our trips. You are so sweet, humble, and down to earth. Wishing you all the best in your next adventures and hope we can meet soon in Austin! Missing you!!            
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_9396 - Sahana Raj.jpeg" alt="Sahana Raj" />
+                    <img class="message-img" src="family_friends/IMG_4308 - Sahana Raj.jpeg" alt="Sahana Raj" />
+                    <img class="message-img" src="family_friends/DSC03643 - Sahana Raj.jpeg" alt="Sahana Raj" />
+                    <img class="message-img" src="family_friends/DSC01134 - Sahana Raj.jpeg" alt="Sahana Raj" />
+                    <img class="message-img" src="family_friends/DSC01113 - Sahana Raj.jpeg" alt="Sahana Raj" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -785,6 +867,9 @@
                 <div class="message-author">Alexis R.</div>
                 <div class="message-content">
                     HAPPY BIRTHDAY MANDY!!! Thanks for being an incredible friend I can always count on. You’re of the most humble geniuses I’ve ever met LOL. I honestly don’t think I know anyone who can work hard and play hard as well as you can. Have a blast this birthday! Love you big girl!
+                </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_5651 - Alexis Reyes.jpeg" alt="Alexis Reyes" />
                 </div>
             </div>
 
@@ -814,6 +899,13 @@
                 <div class="message-content">
                     HAPPY BIRTHDAY MANDY! Genuinely so grateful to have crossed paths with an individual so intelligent, creative, and beautiful as you. It has been so fun watching you achieve all that you have in the past year of knowing you, and I can’t wait for all that’s yet to come. I hope you get to celebrate your special day well and I’m always looking forward to the next time we all hang out!  
                 </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_7246 - Abigail Nguyen.jpeg" alt="Abigail Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_5823 - Abigail Nguyen.jpeg" alt="Abigail Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_5606 - Abigail Nguyen.jpeg" alt="Abigail Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_0976 - Abigail Nguyen.jpeg" alt="Abigail Nguyen" />
+                    <img class="message-img" src="family_friends/IMG_0435 - Abigail Nguyen.jpeg" alt="Abigail Nguyen" />
+                </div>
             </div>
 
             <div class="message-box">
@@ -827,6 +919,9 @@
                 <div class="message-author">Adrian N.</div>
                 <div class="message-content">
                     Chúc mừng sinh nhật Mandy! Cám ơn bạn đã giúp tôi học tiếng việt và cám ơn gia đình bạn đã cho tôi ăn luôn. Tôi nói tiếng việt giỏi hơn nhờ bạn giới thiệu chùa cho tôi. Cám ơn bạn nghe tôi tâm sự về love life của tôi. Bạn hiền lắm và tôi chúc bạn học hành tốt ở Houston!      
+                </div>
+                <div class="message-images-container">
+                    <img class="message-img" src="family_friends/IMG_9960 - Adrian Nguyen.PNG" alt="Adrian Nguyen" />
                 </div>
             </div>
 
