@@ -6,44 +6,159 @@
     <title>Mandy's 8-Bit World</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        .event-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border: 4px solid var(--primary-pink);
+            padding: 15px;
+            box-shadow: 8px 8px 0 var(--primary-pink);
+            border-radius: 8px;
+        }
+
+        .event-switcher h3 {
+            font-size: 0.7em;
+            color: var(--primary-pink);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .event-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .event-button {
+            background: var(--primary-pink);
+            color: white;
+            border: 3px solid var(--dark-pink);
+            padding: 10px 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6em;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 var(--dark-pink);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .event-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--dark-pink);
+        }
+
+        .event-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--dark-pink);
+        }
+
+        .event-button.active {
+            background: var(--dark-pink);
+            box-shadow: 2px 2px 0 var(--primary-pink);
+        }
+
+        /* Blue-pink theme styles */
+        body.event-anniversary-2026 {
+            --primary-pink: #4169E1;
+            --secondary-pink: #ff69b4;
+            --dark-pink: #1E3A8A;
+            --background: #E6F2FF;
+        }
+
+        body.event-anniversary-2026 .event-switcher {
+            border-color: var(--primary-pink);
+        }
+
+        body.event-anniversary-2026 .event-button {
+            background: var(--primary-pink);
+            border-color: var(--dark-pink);
+            box-shadow: 4px 4px 0 var(--dark-pink);
+        }
+
+        body.event-anniversary-2026 .event-button:hover {
+            box-shadow: 6px 6px 0 var(--dark-pink);
+        }
+
+        body.event-anniversary-2026 .event-button.active {
+            background: var(--dark-pink);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .event-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+                border-width: 3px;
+                box-shadow: 6px 6px 0 var(--primary-pink);
+            }
+
+            .event-switcher h3 {
+                font-size: 0.6em;
+                margin-bottom: 8px;
+            }
+
+            .event-button {
+                padding: 8px 12px;
+                font-size: 0.55em;
+                border-width: 2px;
+                box-shadow: 3px 3px 0 var(--dark-pink);
+            }
+
+            .event-button:hover {
+                transform: none;
+            }
+        }
+    </style>
 </head>
-<body>
+<body id="main-body">
     <div class="container">
-        <header>
-            <h1 class="pixel-text">Mandy Nguyen's World</h1>
-            <div class="pixel-heart">❤️</div>
+        <div class="event-switcher">
+            <h3>Events</h3>
+            <div class="event-buttons">
+                <button class="event-button" id="btn-birthday" onclick="switchEvent('birthday-2025')">🎂 Birthday 2025</button>
+                <button class="event-button" id="btn-anniversary" onclick="switchEvent('anniversary-2026')">💕 Anniversary 2026</button>
+            </div>
+        </div>
+
+        <header id="main-header">
+            <h1 class="pixel-text" id="main-title">Mandy Nguyen's World</h1>
+            <div class="pixel-heart" id="main-emoji">❤️</div>
         </header>
         
         <main>
             <section class="pixel-box">
-                <h2>Happy 22nd Birthday Mandy!</h2>
-                <p>Hi Mandy! This is a little special website made just for you. I hope you enjoy using it!</p>
-                <p>-Brandon <3 <p>
+                <h2 id="main-subtitle">Happy 22nd Birthday Mandy!</h2>
+                <p id="main-description">Hi Mandy! This is a little special website made just for you. I hope you enjoy using it!</p>
+                <p>-Brandon <3</p>
             </section>
 
             <section class="pixel-box interactive-box">
-                <a href="pictures.html" class="pixel-link">
+                <a href="pictures.html" class="pixel-link" id="link-pictures">
                     <h2>Pictures and Videos of Mandy</h2>
                     <p>Click to see some of my favorite pics and vids of Mandy! 📸</p>
                 </a>
             </section>
 
             <section class="pixel-box interactive-box">
-                <a href="moments.html" class="pixel-link">
+                <a href="moments.html" class="pixel-link" id="link-moments">
                     <h2>Moments Together</h2>
                     <p>Our special memories together! 💝</p>
                 </a>
             </section>
 
             <section class="pixel-box interactive-box">
-                <a href="messages.html" class="pixel-link">
+                <a href="messages.html" class="pixel-link" id="link-messages">
                     <h2>Messages to Mandy</h2>
                     <p>Special messages from your loved ones! 💌</p>
                 </a>
             </section>
 
             <section class="pixel-box interactive-box">
-                <a href="pets.html" class="pixel-link">
+                <a href="pets.html" class="pixel-link" id="link-pets">
                     <h2>Pets</h2>
                     <p>Special pets in our lives!! 🐾</p>
                 </a>
@@ -54,6 +169,67 @@
             <p>Made with love by your boyfriend Brandon</p>
         </footer>
     </div>
+    <script src="event-config.js"></script>
     <script src="animations.js"></script>
+    <script>
+        // Initialize page with current event
+        function initializeEvent() {
+            const event = getCurrentEvent();
+            const eventId = event.id;
+            
+            // Redirect to anniversary page if anniversary event
+            if (eventId === 'anniversary-2026') {
+                window.location.href = 'anniversary.html?event=anniversary-2026';
+                return;
+            }
+            
+            // Update body class for theme
+            document.body.className = `event-${eventId}`;
+            document.body.id = 'main-body';
+            
+            // Update header
+            document.getElementById('main-title').textContent = event.title + ' ' + event.date;
+            document.getElementById('main-emoji').textContent = event.emoji;
+            
+            // Update content
+            document.getElementById('main-subtitle').textContent = event.subtitle;
+            document.getElementById('main-description').textContent = event.description;
+            
+            // Update active button
+            document.querySelectorAll('.event-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${eventId.split('-')[0]}`).classList.add('active');
+            
+            // Update links with event parameter
+            const links = ['pictures', 'moments', 'messages', 'pets'];
+            links.forEach(link => {
+                const element = document.getElementById(`link-${link}`);
+                if (element) {
+                    element.href = getEventUrl(`${link}.html`, eventId);
+                }
+            });
+            
+            // Apply theme colors
+            if (event.colorScheme) {
+                const root = document.documentElement;
+                root.style.setProperty('--primary-pink', event.colorScheme.primary);
+                root.style.setProperty('--secondary-pink', event.colorScheme.secondary || event.colorScheme.accent);
+                root.style.setProperty('--dark-pink', event.colorScheme.dark);
+                root.style.setProperty('--background', event.colorScheme.background);
+            }
+        }
+        
+        function switchEvent(eventId) {
+            if (eventId === 'anniversary-2026') {
+                window.location.href = 'anniversary.html?event=anniversary-2026';
+            } else {
+                setCurrentEvent(eventId);
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initializeEvent);
+    </script>
 </body>
 </html> 

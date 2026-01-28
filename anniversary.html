@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary 2026 - Mandy & Brandon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Anniversary Flower & Origami Theme */
+        :root {
+            --anniversary-blue: #4169E1;
+            --anniversary-pink: #ff69b4;
+            --anniversary-dark-blue: #1E3A8A;
+            --anniversary-light-blue: #E6F2FF;
+            --anniversary-light-pink: #FFB6C1;
+            --flower-pink: #FFB6C1;
+            --flower-blue: #87CEEB;
+            --origami-white: #FFF8F0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #E6F2FF 0%, #FFF0F5 50%, #E6F2FF 100%);
+            background-attachment: fixed;
+            font-family: 'Merriweather', serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating flower decorations */
+        .floating-flower {
+            position: fixed;
+            font-size: 2em;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatFlower 15s infinite ease-in-out;
+        }
+
+        @keyframes floatFlower {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        /* Origami crane decorations */
+        .origami-crane {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatCrane 20s infinite ease-in-out;
+        }
+
+        @keyframes floatCrane {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(360deg);
+            }
+        }
+
+
+
+        .anniversary-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,182,193,0.1) 100%);
+            border: 2px solid rgba(255,182,193,0.5);
+            box-shadow: 0 8px 24px rgba(65, 105, 225, 0.15);
+            position: relative;
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .anniversary-box::before {
+            content: '🌺';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2em;
+            opacity: 0.4;
+            animation: rotateFlower 10s infinite linear;
+        }
+
+        @keyframes rotateFlower {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .anniversary-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23FFB6C1" opacity="0.3"/><circle cx="80" cy="30" r="1.5" fill="%2387CEEB" opacity="0.3"/><circle cx="40" cy="70" r="1.5" fill="%23FFB6C1" opacity="0.3"/><circle cx="70" cy="80" r="2" fill="%2387CEEB" opacity="0.3"/></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+            border-radius: 15px;
+        }
+
+        .anniversary-box h2 {
+            color: var(--anniversary-blue);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .anniversary-box p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+
+        .anniversary-box.interactive-box {
+            cursor: pointer;
+        }
+
+        .anniversary-box.interactive-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(65, 105, 225, 0.25);
+            border-color: rgba(255,182,193,0.8);
+        }
+
+        .heart-decoration {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart-decoration:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .heart-decoration:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .event-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border: 4px solid var(--anniversary-blue);
+            padding: 15px;
+            box-shadow: 8px 8px 0 var(--anniversary-blue);
+            border-radius: 8px;
+        }
+
+        .event-switcher h3 {
+            font-size: 0.7em;
+            color: var(--anniversary-blue);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .event-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .event-button {
+            background: linear-gradient(135deg, var(--anniversary-blue) 0%, var(--anniversary-pink) 100%);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-family: 'Merriweather', serif;
+            font-size: 0.85em;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .event-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(65, 105, 225, 0.4);
+        }
+
+        .event-button:active {
+            transform: translateY(0);
+        }
+
+        .event-button.active {
+            background: linear-gradient(135deg, var(--anniversary-dark-blue) 0%, var(--anniversary-pink) 100%);
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+        }
+
+        .anniversary-content {
+            background: linear-gradient(135deg, rgba(255,182,193,0.2) 0%, rgba(230,242,255,0.3) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255,182,193,0.3);
+        }
+
+        .anniversary-content::before {
+            content: '🌸 💐 🌸';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5em;
+            opacity: 0.3;
+        }
+
+        .anniversary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,182,193,0.2) 100%);
+            border: 2px solid rgba(255,182,193,0.4);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(65, 105, 225, 0.15);
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(65, 105, 225, 0.2);
+        }
+
+        .stat-box::before {
+            content: '🌺';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            opacity: 0.3;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            color: var(--anniversary-blue);
+            margin-bottom: 8px;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--anniversary-dark-blue);
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: var(--anniversary-dark-blue);
+            font-family: 'Merriweather', serif;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Rose Petal Design */
+        .rose-container {
+            position: relative;
+            width: 1200px;
+            height: 1200px;
+            margin: 0 auto 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rose-center {
+            position: center;
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 32px rgba(255, 20, 147, 0.5);
+            z-index: 10;
+            border: 4px solid rgba(255, 255, 255, 0.4);
+            /* top: 50%;
+            left: 50%; */
+            left: calc(50% - 60px);
+            transform: translate(-50%, -50%);
+        }
+
+        .rose-petal {
+            position: absolute;
+            width: 280px;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.95) 0%, rgba(255, 105, 180, 0.95) 100%);
+            border-radius: 50% 0 50% 0;
+            transform-origin: 50% 100%;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 6px 24px rgba(255, 105, 180, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            z-index: 5;
+        }
+
+        .rose-petal:hover {
+            transform: scale(1.2) translateY(-15px) !important;
+            box-shadow: 0 12px 40px rgba(255, 105, 180, 0.7);
+            z-index: 15;
+        }
+
+        /* Center is 500px diameter = 250px radius at (50%, 50%) */
+        /* Petals are 280px wide, 350px tall, transform-origin at bottom center (50% 100%) */
+        /* Position petals so their bottom center (transform-origin) touches center circle edge */
+        /* For angle θ: point on circle = (250*cos(θ), 250*sin(θ)) relative to center */
+        /* Element top-left: left = 50% + 250*cos(θ) - 140px, top = 50% + 250*sin(θ) - 350px */
+        /* Note: CSS 0° = right, 90° = bottom, but we want 0° = top, so use -90° offset */
+        
+        .rose-petal.petal-1 {
+            /* Top petal: -90° = (0, -250) */
+            top: calc(50% - 600px - 160px);
+            left: calc(50% - 140px - 180px);
+            transform: rotate(-90deg);
+        }
+
+        .rose-petal.petal-1:hover {
+            transform: rotate(-90deg) scale(1.2) translateY(-15px) !important;
+        }
+
+        .rose-petal.petal-2 {
+            /* Top-right petal: -45° = (177, -177) */
+            top: calc(50% - 527px - 160px);
+            left: calc(50% + 37px - 175px);
+            transform: rotate(-45deg);
+        }
+
+        .rose-petal.petal-2:hover {
+            transform: rotate(-45deg) scale(1.2) translateY(-15px) !important;
+        }
+
+        .rose-petal.petal-3 {
+            /* Right petal: 0° = (250, 0) */
+            top: calc(50% - 350px - 160px);
+            left: calc(50% + 110px - 175px);
+            transform: rotate(0deg);
+        }
+
+        .rose-petal.petal-3:hover {
+            transform: rotate(0deg) scale(1.2) translateX(15px) !important;
+        }
+
+        .rose-petal.petal-4 {
+            /* Bottom-right petal: 45° = (177, 177) */
+            top: calc(50% - 173px - 160px);
+            left: calc(50% + 37px - 175px);
+            transform: rotate(45deg);
+        }
+
+        .rose-petal.petal-4:hover {
+            transform: rotate(45deg) scale(1.2) translateY(15px) !important;
+        }
+
+        .rose-petal.petal-5 {
+            /* Bottom petal: 90° = (0, 250) */
+            top: calc(50% - 100px - 160px);
+            left: calc(50% - 140px - 175px);
+            transform: rotate(90deg);
+        }
+
+        .rose-petal.petal-5:hover {
+            transform: rotate(90deg) scale(1.2) translateY(15px) !important;
+        }
+
+        .rose-petal.petal-6 {
+            /* Bottom-left petal: 135° = (-177, 177) */
+            top: calc(50% - 173px - 160px);
+            left: calc(50% - 317px - 175px);
+            transform: rotate(135deg);
+        }
+
+        .rose-petal.petal-6:hover {
+            transform: rotate(135deg) scale(1.2) translateY(15px) !important;
+        }
+
+        .rose-petal.petal-7 {
+            /* Left petal: 180° = (-250, 0) */
+            top: calc(50% - 350px - 160px);
+            left: calc(50% - 390px - 175px);
+            transform: rotate(180deg);
+        }
+
+        .rose-petal.petal-7:hover {
+            transform: rotate(180deg) scale(1.2) translateX(-15px) !important;
+        }
+
+        .rose-petal.petal-8 {
+            /* Top-left petal: 225° = (-177, -177) */
+            top: calc(50% - 527px - 160px);
+            left: calc(50% - 317px - 175px);
+            transform: rotate(225deg);
+        }
+
+        .rose-petal.petal-8:hover {
+            transform: rotate(225deg) scale(1.2) translateY(-15px) !important;
+        }
+
+        .petal-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .petal-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .petal-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .petal-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8em;
+            color: #fff;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 600;
+        }
+
+        /* Timeline Stem */
+        .timeline-stem {
+            position: relative;
+            width: 12px;
+            height: 800px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #228B22 0%, #32CD32 100%);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(34, 139, 34, 0.4);
+        }
+
+        .stem-line {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #228B22 0%, #32CD32 100%);
+            border-radius: 6px;
+        }
+
+        .stem-leaf {
+            position: absolute;
+            width: 50px;
+            height: 35px;
+            background: #228B22;
+            border-radius: 0 100% 0 100%;
+            left: -40px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .stem-leaf.right {
+            left: auto;
+            /* right: -25px; */
+            transform: scaleX(-1);
+        }
+
+        .stem-leaf:nth-of-type(1) {
+            top: 15%;
+        }
+
+        .stem-leaf:nth-of-type(2) {
+            top: 35%;
+        }
+
+        .stem-leaf:nth-of-type(3) {
+            top: 55%;
+        }
+
+        .stem-leaf:nth-of-type(4) {
+            top: 75%;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .marker-dot {
+            width: 28px;
+            height: 28px;
+            background: #fff;
+            border: 4px solid #228B22;
+            border-radius: 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+        }
+
+        .marker-label {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-family: 'Merriweather', serif;
+            font-size: 0.95em;
+            color: #1E3A8A;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            white-space: nowrap;
+            min-width: 140px;
+            font-weight: 400;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .event-switcher {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+                border-width: 2px;
+                box-shadow: 0 4px 16px rgba(65, 105, 225, 0.2);
+            }
+
+            .event-switcher h3 {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .event-button {
+                padding: 8px 12px;
+                font-size: 0.75em;
+            }
+
+            .event-button:hover {
+                transform: translateY(-2px);
+            }
+
+            .rose-container {
+                width: 600px;
+                height: 600px;
+                margin-bottom: 60px;
+            }
+
+            .rose-center {
+                width: 150px;
+                height: 150px;
+            }
+
+            .rose-center h2 {
+                font-size: 1.6em;
+                padding: 15px;
+            }
+
+            .rose-petal {
+                width: 160px;
+                height: 200px;
+            }
+
+            .rose-petal.petal-1 {
+                top: -100px;
+            }
+
+            .rose-petal.petal-2 {
+                top: -40px;
+                right: 20px;
+            }
+
+            .rose-petal.petal-3 {
+                right: -80px;
+            }
+
+            .rose-petal.petal-4 {
+                bottom: -40px;
+                right: 20px;
+            }
+
+            .rose-petal.petal-5 {
+                bottom: -100px;
+            }
+
+            .rose-petal.petal-6 {
+                bottom: -40px;
+                left: 20px;
+            }
+
+            .rose-petal.petal-7 {
+                left: -80px;
+            }
+
+            .rose-petal.petal-8 {
+                top: -40px;
+                left: 20px;
+            }
+
+            .petal-icon {
+                font-size: 2.5em;
+            }
+
+            .petal-content h3 {
+                font-size: 1.4em;
+            }
+
+            .timeline-stem {
+                height: 600px;
+                width: 10px;
+            }
+
+            .marker-label {
+                font-size: 0.75em;
+                padding: 6px 10px;
+                min-width: 100px;
+            }
+
+            .anniversary-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="event-switcher">
+            <h3>Events</h3>
+            <div class="event-buttons">
+                <button class="event-button" onclick="switchToEvent('birthday-2025')">🎂 Birthday 2025</button>
+                <button class="event-button active" onclick="switchToEvent('anniversary-2026')">💕 Anniversary 2026</button>
+            </div>
+        </div>
+
+        <!-- Floating flower decorations -->
+        <div class="floating-flower" style="top: 10%; left: 5%; animation-delay: 0s;">🌸</div>
+        <div class="floating-flower" style="top: 20%; right: 10%; animation-delay: 2s;">🌺</div>
+        <div class="floating-flower" style="top: 60%; left: 8%; animation-delay: 4s;">🌸</div>
+        <div class="floating-flower" style="top: 80%; right: 5%; animation-delay: 6s;">🌺</div>
+        <div class="floating-flower" style="top: 40%; left: 15%; animation-delay: 8s;">🌸</div>
+
+        <main style="position: relative; min-height: 100vh; padding: 20px 0;">
+            <!-- Rose Petals Container -->
+            <div class="rose-container">
+                <!-- Center of the rose -->
+                <div class="rose-center">
+                    <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #fff; margin: 0; text-align: center; padding: 20px;">
+                        Happy<br>Anniversary<br>💕
+                    </h2>
+                </div>
+
+                <!-- Petal 1 - Top -->
+                <div class="rose-petal petal-1">
+                    <a href="pictures.html?event=anniversary-2026" class="petal-link">
+                        <div class="petal-content">
+                            <div class="petal-icon">📸</div>
+                            <h3>Our Photos</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Petal 2 - Top Right -->
+                <div class="rose-petal petal-2">
+                    <a href="moments.html?event=anniversary-2026" class="petal-link">
+                        <div class="petal-content">
+                            <div class="petal-icon">💝</div>
+                            <h3>Moments</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Petal 3 - Right -->
+                <div class="rose-petal petal-3">
+                    <a href="messages.html?event=anniversary-2026" class="petal-link">
+                        <div class="petal-content">
+                            <div class="petal-icon">💌</div>
+                            <h3>Messages</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Petal 4 - Bottom Right -->
+                <div class="rose-petal petal-4">
+                    <a href="pets.html?event=anniversary-2026" class="petal-link">
+                        <div class="petal-content">
+                            <div class="petal-icon">🐾</div>
+                            <h3>Our Pets</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Petal 5 - Bottom -->
+                <div class="rose-petal petal-5">
+                    <div class="petal-content">
+                        <div class="petal-icon">🌺</div>
+                        <h3>Coming Soon</h3>
+                    </div>
+                </div>
+
+                <!-- Petal 6 - Bottom Left -->
+                <div class="rose-petal petal-6">
+                    <div class="petal-content">
+                        <div class="petal-icon">🌸</div>
+                        <h3>Memories</h3>
+                    </div>
+                </div>
+
+                <!-- Petal 7 - Left -->
+                <div class="rose-petal petal-7">
+                    <div class="petal-content">
+                        <div class="petal-icon">💕</div>
+                        <h3>Love</h3>
+                    </div>
+                </div>
+
+                <!-- Petal 8 - Top Left -->
+                <div class="rose-petal petal-8">
+                    <div class="petal-content">
+                        <div class="petal-icon">🌹</div>
+                        <h3>Together</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Stem -->
+            <div class="timeline-stem">
+                <div class="stem-line"></div>
+                
+                <!-- Leaves on the stem -->
+                <div class="stem-leaf"></div>
+                <div class="stem-leaf right"></div>
+                <div class="stem-leaf"></div>
+                <div class="stem-leaf right"></div>
+                
+                <!-- Timeline markers from present (top) to past (bottom) -->
+                <div class="timeline-marker" style="top: 5%;">
+                    <div class="marker-dot"></div>
+                    <div class="marker-label">Feb 14, 2026<br>Anniversary</div>
+                </div>
+                
+                <div class="timeline-marker" style="top: 20%;">
+                    <div class="marker-dot"></div>
+                    <div class="marker-label">2025<br>Growing Together</div>
+                </div>
+                
+                <div class="timeline-marker" style="top: 40%;">
+                    <div class="marker-dot"></div>
+                    <div class="marker-label">2024<br>Building Memories</div>
+                </div>
+                
+                <div class="timeline-marker" style="top: 60%;">
+                    <div class="marker-dot"></div>
+                    <div class="marker-label">2023<br>First Year</div>
+                </div>
+                
+                <div class="timeline-marker" style="top: 80%;">
+                    <div class="marker-dot"></div>
+                    <div class="marker-label">Oct 1, 2022<br>We First Met</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with love by Brandon</p>
+        </footer>
+    </div>
+    <script src="event-config.js"></script>
+    <script src="animations.js"></script>
+    <script>
+        function switchToEvent(eventId) {
+            if (eventId === 'birthday-2025') {
+                window.location.href = 'main.html?event=birthday-2025';
+            } else if (eventId === 'anniversary-2026') {
+                window.location.href = 'anniversary.html?event=anniversary-2026';
+            }
+        }
+    </script>
+</body>
+</html>
