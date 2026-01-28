@@ -37,12 +37,42 @@
             animation: floatFlower 15s infinite ease-in-out;
         }
 
+        /* New background flowers that drift and bounce around */
+        .background-flower {
+            position: fixed;
+            font-size: 2.4em;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            animation-name: floatAround;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
         @keyframes floatFlower {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
             }
             50% {
                 transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        @keyframes floatAround {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(35px, -20px) rotate(60deg);
+            }
+            50% {
+                transform: translate(0, -45px) rotate(140deg);
+            }
+            75% {
+                transform: translate(-35px, -20px) rotate(220deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(320deg);
             }
         }
 
@@ -304,37 +334,59 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-left: -10px; /* subtle shift of entire flower slightly left */
         }
 
         .rose-center {
-            position: center;
+            position: absolute;
             width: 350px;
             height: 350px;
-            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            /* Slightly warmer, more yellow tulip center */
+            background: radial-gradient(circle at 30% 25%, #f5e9ae 0%, #ffefb5 30%, #ffdf80 55%, #f3b741 80%, #c47f00 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 12px 32px rgba(255, 20, 147, 0.5);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
             z-index: 10;
-            border: 4px solid rgba(255, 255, 255, 0.4);
-            /* top: 50%;
-            left: 50%; */
-            left: calc(50% - 60px);
+            border: 4px solid rgba(255, 255, 255, 0.65);
+            top: 40%;
+            left: calc(50% - 200px); /* shift center 100px to the left */
             transform: translate(-50%, -50%);
+            overflow: hidden;
         }
+
+        /* Individual stamens inside tulip center, angled outward like a 5‑point star */
+        .stamen {
+            position: absolute;
+            width: 7px;
+            height: 60px;
+            background: #2b2115;
+            border-radius: 999px;
+            top: 50%;
+            left: 50%;
+            transform-origin: center center;
+        }
+
+        /* Move each stamen outward from the center along its angle so it sits nearer the edge */
+        .stamen-1 { transform: translate(-50%, -50%) rotate(0deg) translateY(-110px); }  /* top */
+        .stamen-2 { transform: translate(-50%, -50%) rotate(72deg) translateY(-110px); }  /* upper-right */
+        .stamen-3 { transform: translate(-50%, -50%) rotate(144deg)  translateY(-110px); }  /* lower-right */
+        .stamen-4 { transform: translate(-50%, -50%) rotate(216deg) translateY(-110px); }  /* lower-left */
+        .stamen-5 { transform: translate(-50%, -50%) rotate(288deg) translateY(-110px); }  /* upper-left */
 
         .rose-petal {
             position: absolute;
             width: 280px;
             height: 350px;
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.95) 0%, rgba(255, 105, 180, 0.95) 100%);
+            /* Slightly darker, richer petals */
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.98) 0%, rgba(219, 39, 119, 0.98) 100%);
             border-radius: 50% 0 50% 0;
             transform-origin: 50% 100%;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 6px 24px rgba(255, 105, 180, 0.4);
-            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 28px rgba(219, 39, 119, 0.55);
+            border: 3px solid rgba(255, 255, 255, 0.7);
             z-index: 5;
         }
 
@@ -342,6 +394,11 @@
             transform: scale(1.2) translateY(-15px) !important;
             box-shadow: 0 12px 40px rgba(255, 105, 180, 0.7);
             z-index: 15;
+        }
+
+        :root {
+            --rose-top-petal-shift: 135px;
+            --rose-left-petal-shift: 200px;
         }
 
         /* Center is 500px diameter = 250px radius at (50%, 50%) */
@@ -353,8 +410,8 @@
         
         .rose-petal.petal-1 {
             /* Top petal: -90° = (0, -250) */
-            top: calc(50% - 600px - 160px);
-            left: calc(50% - 140px - 180px);
+            top: calc(50% - 600px - var(--rose-top-petal-shift));
+            left: calc(50% - 140px - var(--rose-left-petal-shift));
             transform: rotate(-90deg);
         }
 
@@ -364,8 +421,8 @@
 
         .rose-petal.petal-2 {
             /* Top-right petal: -45° = (177, -177) */
-            top: calc(50% - 527px - 160px);
-            left: calc(50% + 37px - 175px);
+            top: calc(50% - 527px - var(--rose-top-petal-shift));
+            left: calc(50% + 37px - var(--rose-left-petal-shift));
             transform: rotate(-45deg);
         }
 
@@ -375,8 +432,8 @@
 
         .rose-petal.petal-3 {
             /* Right petal: 0° = (250, 0) */
-            top: calc(50% - 350px - 160px);
-            left: calc(50% + 110px - 175px);
+            top: calc(50% - 350px - var(--rose-top-petal-shift));
+            left: calc(50% + 110px - var(--rose-left-petal-shift));
             transform: rotate(0deg);
         }
 
@@ -386,8 +443,8 @@
 
         .rose-petal.petal-4 {
             /* Bottom-right petal: 45° = (177, 177) */
-            top: calc(50% - 173px - 160px);
-            left: calc(50% + 37px - 175px);
+            top: calc(50% - 173px - var(--rose-top-petal-shift));
+            left: calc(50% + 37px - var(--rose-left-petal-shift));
             transform: rotate(45deg);
         }
 
@@ -397,8 +454,8 @@
 
         .rose-petal.petal-5 {
             /* Bottom petal: 90° = (0, 250) */
-            top: calc(50% - 100px - 160px);
-            left: calc(50% - 140px - 175px);
+            top: calc(50% - 100px - var(--rose-top-petal-shift));
+            left: calc(50% - 140px - var(--rose-left-petal-shift));
             transform: rotate(90deg);
         }
 
@@ -408,8 +465,8 @@
 
         .rose-petal.petal-6 {
             /* Bottom-left petal: 135° = (-177, 177) */
-            top: calc(50% - 173px - 160px);
-            left: calc(50% - 317px - 175px);
+            top: calc(50% - 173px - var(--rose-top-petal-shift));
+            left: calc(50% - 317px - var(--rose-left-petal-shift));
             transform: rotate(135deg);
         }
 
@@ -419,8 +476,8 @@
 
         .rose-petal.petal-7 {
             /* Left petal: 180° = (-250, 0) */
-            top: calc(50% - 350px - 160px);
-            left: calc(50% - 390px - 175px);
+            top: calc(50% - 350px - var(--rose-top-petal-shift));
+            left: calc(50% - 390px - var(--rose-left-petal-shift));
             transform: rotate(180deg);
         }
 
@@ -430,8 +487,8 @@
 
         .rose-petal.petal-8 {
             /* Top-left petal: 225° = (-177, -177) */
-            top: calc(50% - 527px - 160px);
-            left: calc(50% - 317px - 175px);
+            top: calc(50% - 527px - var(--rose-top-petal-shift));
+            left: calc(50% - 317px - var(--rose-left-petal-shift));
             transform: rotate(225deg);
         }
 
@@ -685,8 +742,15 @@
             <div class="rose-container">
                 <!-- Center of the rose -->
                 <div class="rose-center">
-                    <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #fff; margin: 0; text-align: center; padding: 20px;">
-                        Happy<br>Anniversary<br>💕
+                    <!-- 5 angled stamens like a star -->
+                    <div class="stamen stamen-1"></div>
+                    <div class="stamen stamen-2"></div>
+                    <div class="stamen stamen-3"></div>
+                    <div class="stamen stamen-4"></div>
+                    <div class="stamen stamen-5"></div>
+
+                    <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #fff; margin: 0; text-align: center; padding: 20px; position: relative; z-index: 1;">
+                        Happy<br> 3 Year Anniversary!<br>
                     </h2>
                 </div>
 

@@ -31,6 +31,33 @@ function createFallingElement(type) {
     });
 }
 
+// Create a drifting/bouncing flower for background (anniversary page)
+function createBackgroundFlower() {
+    const flower = document.createElement('div');
+    flower.className = 'background-flower';
+
+    // Vary emoji / look
+    const emojis = ['🌸', '🌺', '🌷', '🌹', '🌼', '💐'];
+    flower.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Random starting position
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.top = Math.random() * 100 + 'vh';
+
+    // Random size & animation timing
+    const scale = Math.random() * 0.7 + 0.7; // 0.7 - 1.4
+    flower.style.fontSize = (2.2 * scale) + 'em';
+    // Faster, more lively motion and shorter delay so they feel constant
+    flower.style.animationDuration = (Math.random() * 3 + 4) + 's'; // 4–7s
+    flower.style.animationDelay = (Math.random() * 4) + 's';        // 0–4s
+
+    // Slight color variation using filter
+    const hue = Math.floor(Math.random() * 40) - 20; // -20 to +20 degrees
+    flower.style.filter = `hue-rotate(${hue}deg)`;
+
+    document.body.appendChild(flower);
+}
+
 // Create a gray cat (for anniversary page)
 function createCat() {
     const cat = document.createElement('div');
@@ -474,6 +501,12 @@ window.addEventListener('load', () => {
     if (isAnniversaryPage) {
         // Create cat for anniversary page
         createCat();
+
+        // Create a field of drifting flowers in the background
+        const flowerCount = 35;
+        for (let i = 0; i < flowerCount; i++) {
+            createBackgroundFlower();
+        }
     } else {
         // Create Magnus (dog) for other pages
         createMagnus();
