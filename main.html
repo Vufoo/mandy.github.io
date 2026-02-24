@@ -117,10 +117,9 @@
 <body id="main-body">
     <div class="container">
         <div class="event-switcher">
-            <h3>Events</h3>
             <div class="event-buttons">
-                <button class="event-button" id="btn-birthday" onclick="switchEvent('birthday-2025')">🎂 Birthday 2025</button>
-                <button class="event-button" id="btn-anniversary" onclick="switchEvent('anniversary-2026')">💕 Anniversary 2026</button>
+                <button class="event-button" id="btn-birthday" onclick="switchEvent('birthday-2025')"> 🎂 Birthday 2025</button>
+                <button class="event-button" id="btn-anniversary" onclick="switchEvent('anniversary-2026')"> 🎂 Birthday 2026</button>
             </div>
         </div>
 
@@ -177,9 +176,9 @@
             const event = getCurrentEvent();
             const eventId = event.id;
             
-            // Redirect to anniversary page if anniversary event
+            // Redirect to Birthday 2026 page if anniversary event is selected
             if (eventId === 'anniversary-2026') {
-                window.location.href = 'anniversary.html?event=anniversary-2026';
+                window.location.href = 'birthday2026.html?event=birthday-2026';
                 return;
             }
             
@@ -222,7 +221,7 @@
         
         function switchEvent(eventId) {
             if (eventId === 'anniversary-2026') {
-                window.location.href = 'anniversary.html?event=anniversary-2026';
+                window.location.href = 'birthday2026.html?event=birthday-2026';
             } else {
                 setCurrentEvent(eventId);
             }

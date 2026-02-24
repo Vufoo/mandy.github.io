@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anniversary 2026 - Mandy & Brandon</title>
+    <title>Birthday 2026 - Mandy & Brandon</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Anniversary Flower & Origami Theme */
+        /* Birthday 2026 Flower & Origami Theme */
         :root {
             --anniversary-blue: #4169E1;
             --anniversary-pink: #ff69b4;
@@ -361,7 +361,7 @@
             position: absolute;
             width: 7px;
             height: 60px;
-            background: #2b2115;
+            background: #5b5857;
             border-radius: 999px;
             top: 50%;
             left: 50%;
@@ -723,10 +723,9 @@
 <body>
     <div class="container">
         <div class="event-switcher">
-            <h3>Events</h3>
             <div class="event-buttons">
                 <button class="event-button" onclick="switchToEvent('birthday-2025')">🎂 Birthday 2025</button>
-                <button class="event-button active" onclick="switchToEvent('anniversary-2026')">💕 Anniversary 2026</button>
+                <button class="event-button active" onclick="switchToEvent('birthday-2026')">🎂 Birthday 2026</button>
             </div>
         </div>
 
@@ -750,23 +749,23 @@
                     <div class="stamen stamen-5"></div>
 
                     <h2 style="font-family: 'Dancing Script', cursive; font-size: 1.8em; color: #fff; margin: 0; text-align: center; padding: 20px; position: relative; z-index: 1;">
-                        Happy<br> 3 Year Anniversary!<br>
+                        Happy<br> Birthday 2026!<br>
                     </h2>
                 </div>
 
                 <!-- Petal 1 - Top -->
                 <div class="rose-petal petal-1">
-                    <a href="pictures.html?event=anniversary-2026" class="petal-link">
+                    <a href="pictures.html?event=birthday-2026" class="petal-link">
                         <div class="petal-content">
                             <div class="petal-icon">📸</div>
-                            <h3>Our Photos</h3>
+                            <h3>Mandy</h3>
                         </div>
                     </a>
                 </div>
 
                 <!-- Petal 2 - Top Right -->
                 <div class="rose-petal petal-2">
-                    <a href="moments.html?event=anniversary-2026" class="petal-link">
+                    <a href="moments.html?event=birthday-2026" class="petal-link">
                         <div class="petal-content">
                             <div class="petal-icon">💝</div>
                             <h3>Moments</h3>
@@ -775,21 +774,20 @@
                 </div>
 
                 <!-- Petal 3 - Right -->
-                <div class="rose-petal petal-3">
-                    <a href="messages.html?event=anniversary-2026" class="petal-link">
-                        <div class="petal-content">
-                            <div class="petal-icon">💌</div>
-                            <h3>Messages</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Petal 4 - Bottom Right -->
                 <div class="rose-petal petal-4">
-                    <a href="pets.html?event=anniversary-2026" class="petal-link">
+                    <a href="pets.html?event=birthday-2026" class="petal-link">
                         <div class="petal-content">
                             <div class="petal-icon">🐾</div>
                             <h3>Our Pets</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- Petal 4 - Bottom Right -->
+                <div class="rose-petal petal-3">
+                    <a href="messages.html?event=birthday-2026" class="petal-link">
+                        <div class="petal-content">
+                            <div class="petal-icon">💌</div>
+                            <h3>Letter from Brandon</h3>
                         </div>
                     </a>
                 </div>
@@ -840,7 +838,7 @@
                 <!-- Timeline markers from present (top) to past (bottom) -->
                 <div class="timeline-marker" style="top: 5%;">
                     <div class="marker-dot"></div>
-                    <div class="marker-label">Feb 14, 2026<br>Anniversary</div>
+                    <div class="marker-label">Feb 14, 2026<br>Birthday</div>
                 </div>
                 
                 <div class="timeline-marker" style="top: 20%;">
@@ -875,8 +873,8 @@
         function switchToEvent(eventId) {
             if (eventId === 'birthday-2025') {
                 window.location.href = 'main.html?event=birthday-2025';
-            } else if (eventId === 'anniversary-2026') {
-                window.location.href = 'anniversary.html?event=anniversary-2026';
+            } else if (eventId === 'birthday-2026') {
+                window.location.href = 'birthday2026.html?event=birthday-2026';
             }
         }
     </script>

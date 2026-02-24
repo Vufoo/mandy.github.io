@@ -494,26 +494,39 @@ function createFallingPhoto() {
 }
 
 window.addEventListener('load', () => {
-    // Check if we're on the anniversary page
-    const isAnniversaryPage = window.location.pathname.includes('anniversary.html') || 
-                               window.location.search.includes('anniversary');
-    
-    if (isAnniversaryPage) {
-        // Create cat for anniversary page
+    const path = window.location.pathname;
+    const params = new URLSearchParams(window.location.search);
+    const eventId = params.get('event');
+
+    const isAnniversaryRoot = path.endsWith('birthday2026.html');
+    const isMainPage = path.endsWith('main.html');
+    const isMediaPage =
+        path.endsWith('moments.html') ||
+        path.endsWith('pictures.html') ||
+        path.endsWith('pets.html');
+
+    // Decide which companion to show
+    if (isAnniversaryRoot) {
+        // Birthday 2026 page (birthday2026.html): cat + flowers
         createCat();
 
-        // Create a field of drifting flowers in the background
         const flowerCount = 35;
         for (let i = 0; i < flowerCount; i++) {
             createBackgroundFlower();
         }
+    } else if (isMediaPage && (eventId === 'anniversary-2026' || eventId === 'birthday-2026')) {
+        // Coming from birthday 2026 page to media pages: cat only
+        createCat();
+    } else if (isMediaPage && eventId === 'birthday-2025') {
+        // Coming from birthday to media pages: dog
+        createMagnus();
     } else {
-        // Create Magnus (dog) for other pages
+        // All other pages keep existing behavior (dog)
         createMagnus();
     }
 
-    // Only create falling elements on the main page
-    if (window.location.pathname.endsWith('main.html')) {
+    // Only create falling elements on the main birthday page
+    if (isMainPage) {
         // Create falling elements more frequently and in bursts
         setInterval(() => {
             // Create emojis

@@ -202,7 +202,7 @@
             <div class="pixel-heart">📸</div>
         </header>
         
-        <a href="main.html" class="back-button">← Back to Home</a>
+        <a href="main.html" class="back-button" id="backHome">← Back to Home</a>
         
         <main>
             <h2 class="section-title">Photos</h2>
@@ -588,5 +588,22 @@
         </footer>
     </div>
     <script src="animations.js"></script>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const eventId = params.get('event');
+            const backLink = document.getElementById('backHome');
+
+            if (!backLink) return;
+
+            if (eventId === 'birthday-2026') {
+                backLink.href = 'birthday2026.html?event=birthday-2026';
+            } else if (eventId === 'anniversary-2026') {
+                backLink.href = 'birthday2026.html?event=anniversary-2026';
+            } else if (eventId === 'birthday-2025') {
+                backLink.href = 'main.html?event=birthday-2025';
+            }
+        })();
+    </script>
 </body>
 </html> 
